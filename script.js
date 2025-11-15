@@ -208,6 +208,7 @@ function initializeChatbot() {
         } else if (payload && payload.type === 'collect_contact') {
             showContactForm();
         } else if (payload && payload.type === 'schedule') {
+            userSay('Schedule a Call');
             showScheduleOptions();
         } else if (payload && payload.payload) {
             userSay(payload.label || payload.payload);
@@ -369,7 +370,9 @@ function initializeChatbot() {
             { label: 'Today — 3:00 PM', payload: 'schedule:today:15:00' },
             { label: 'Tomorrow — 11:00 AM', payload: 'schedule:tomorrow:11:00' },
             { label: 'Pick Date', payload: 'schedule:pick_date' }
-        ]);
+        ], () => {
+            // Callback after bot finishes typing
+        });
     }
 
     // Main handler for user message content
@@ -378,9 +381,21 @@ function initializeChatbot() {
 
         // Quick matching for scheduling payloads
         if (message.startsWith('schedule:')) {
-            const scheduleParts = rawMessage.split(':');
-            const scheduleText = scheduleParts.slice(1).join(' ');
-            botSay(`✅ Scheduled: ${scheduleText}. Our expert will call you then.`, [], null, [{ label: 'Call Now', tel: '+923369295295' }]);
+            const parts = rawMessage.split(':');
+            let scheduleText = '';
+            
+            if (parts[1] === 'pick_date') {
+                scheduleText = 'Custom Date Selection';
+                botSay('📅 Please provide your preferred date and time. For example: "December 15, 2024 at 3:00 PM" or use our calendar. Our expert will confirm the booking shortly.', [
+                    { label: 'Back to Options', payload: { type: 'schedule' } }
+                ], null, [{ label: 'Call Now', tel: '+923369295295' }]);
+            } else {
+                scheduleText = parts.slice(1).join(' ').replace(/:/g, ':');
+                botSay(`✅ Your call is scheduled for ${scheduleText}. Our expert will call you at the scheduled time. Thank you!`, [
+                    { label: 'Back to Menu', payload: 'services' },
+                    { label: 'Talk to Expert Now', payload: 'talk_expert' }
+                ], null, [{ label: 'Call Now', tel: '+923369295295' }]);
+            }
             return;
         }
 
