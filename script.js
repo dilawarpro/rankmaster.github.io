@@ -1,5 +1,5 @@
 // ========================================
-// MARKETOZE - ADVANCED ANIMATIONS & INTERACTIONS
+// Rank Master - ADVANCED ANIMATIONS & INTERACTIONS
 // ========================================
 
 // Initialize GSAP and ScrollTrigger
@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 // ========================================
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('Marketoze Website Loaded Successfully');
+    console.log('Rank Master Website Loaded Successfully');
     
     initializeAnimations();
     initializeCounters();
@@ -152,7 +152,7 @@ function initializeChatbot() {
                 chatbotInput.focus();
                 // If empty, show greeting and quick replies
                 if (!chatbotMessages.hasChildNodes()) {
-                    botSay("Hello! I'm Marketoze Sales & Marketing Assistant. How can I help you today?", [
+                    botSay("Hello! I'm Rank Master Sales & Marketing Assistant. How can I help you today?", [
                         { label: 'Services', payload: 'services' },
                         { label: 'Pricing', payload: 'pricing' },
                         { label: 'Website Development', payload: 'website' },
@@ -271,7 +271,7 @@ function initializeChatbot() {
                 const a = document.createElement('a');
                 a.className = 'btn btn-call-action';
                 a.href = cb.tel ? `tel:${cb.tel}` : '#';
-                a.setAttribute('aria-label', 'Call Marketoze');
+                a.setAttribute('aria-label', 'Call Rank Master');
                 
                 // Add call icon + text
                 const icon = document.createElement('i');
@@ -1067,8 +1067,8 @@ document.addEventListener('click', function (e) {
 // CONSOLE MESSAGES
 // ========================================
 
-console.log('%c🚀 MARKETOZE - Premium Digital Marketing & Web Development', 'color: #6366f1; font-size: 16px; font-weight: bold;');
-console.log('%cWebsite: https://marketoze.com', 'color: #ec4899; font-size: 12px;');
+console.log('%c🚀 Rank Master - Premium Digital Marketing & Web Development', 'color: #6366f1; font-size: 16px; font-weight: bold;');
+console.log('%cWebsite: https://Rank Master.com', 'color: #ec4899; font-size: 12px;');
 console.log('%cPhone: +92 336 9295 295', 'color: #10b981; font-size: 12px;');
-console.log('%cEmail: mailmarketoze@gmail.com', 'color: #0ea5e9; font-size: 12px;');
+console.log('%cEmail: mailRank Master@gmail.com', 'color: #0ea5e9; font-size: 12px;');
 console.log('%cDesigned & Developed by Dilawar Pro ❤️', 'color: #f59e0b; font-size: 12px;');
