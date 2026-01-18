@@ -461,7 +461,7 @@ function initializeChatbot() {
         if (containsAny(userMessage, ['price', 'pricing', 'cost', 'how much'])) {
             return {
                 intent: 'pricing',
-                text: "We have flexible plans: Basic, Balanced, Premium, Extended. For accurate pricing I can either show package details or connect you to an expert for a customized quote.",
+                text: "We have flexible plans: Basic, Business, Business plus, Business pro. For accurate pricing I can either show package details or connect you to an expert for a customized quote.",
                 quickReplies: [
                     { label: 'Show Packages', payload: 'show_packages' },
                     { label: 'Get Custom Quote', payload: 'talk_expert' }
@@ -518,19 +518,19 @@ function initializeChatbot() {
             };
         }
 
-        if (userMessage === 'show_packages' || containsAny(userMessage, ['basic', 'balanced', 'premium', 'extended', 'packages'])) {
+        if (userMessage === 'show_packages' || containsAny(userMessage, ['basic', 'Business', 'Business plus', 'Business pro', 'packages'])) {
             return {
                 intent: 'packages',
-                text: "Here are quick package summaries:\n• Basic — Landing page + Basic SEO\n• Balanced — Multi-page site + SEO + Basic Marketing\n• Premium — E‑commerce/Complex sites + Advanced SEO + Ads\n• Extended — Full growth stack + Dedicated manager. Want details on any package?",
+                text: "Here are quick package summaries:\n• Basic — Landing page + Basic SEO\n• Business — Multi-page site + SEO + Basic Marketing\n• Business plus — E‑commerce/Complex sites + Advanced SEO + Ads\n• Business pro — Full growth stack + Dedicated manager. Want details on any package?",
                 quickReplies: [
                     { label: 'Basic Details', payload: 'package_basic' },
-                    { label: 'Premium Details', payload: 'package_premium' },
+                    { label: 'Business plus Details', payload: 'package_Business plus' },
                     { label: 'Get Custom Quote', payload: 'talk_expert' }
                 ]
             };
         }
 
-        if (userMessage.startsWith('package_') || containsAny(userMessage, ['basic details', 'premium details'])) {
+        if (userMessage.startsWith('package_') || containsAny(userMessage, ['basic details', 'Business plus details'])) {
             // Example expand package
             return {
                 intent: 'package_detail',
@@ -658,7 +658,7 @@ function initializeToastNotifications() {
         { name: 'USA', flag: '🇺🇸', businesses: ['Golden Fitness Gym', 'Sunset Restaurant', 'Beauty Glow Salon', 'Adventure Travel Agency', 'Cozy Coffee Shop', 'Fresh Juice Bar', 'Hair Studio Pro'] },
         { name: 'UK', flag: '🇬🇧', businesses: ['Fitness Elite Gym', 'Tasty Burger Restaurant', 'London Beauty Salon', 'Global Travel Agency', 'Tea House Cafe', 'Organic Smoothie Bar', 'Hair Cutting Studio'] },
         { name: 'Canada', flag: '🇨🇦', businesses: ['Mountain Fitness Gym', 'Italian Restaurant', 'Spa Beauty Salon', 'Travel Dreams Agency', 'Maple Cafe', 'Health Juice Bar', 'Modern Hair Studio'] },
-        { name: 'Australia', flag: '🇦🇺', businesses: ['Beach Gym Studio', 'Aussie Grill Restaurant', 'Luxury Beauty Salon', 'Outback Travel Agency', 'Beach Cafe', 'Fresh Juice Bar', 'Premium Hair Salon'] },
+        { name: 'Australia', flag: '🇦🇺', businesses: ['Beach Gym Studio', 'Aussie Grill Restaurant', 'Luxury Beauty Salon', 'Outback Travel Agency', 'Beach Cafe', 'Fresh Juice Bar', 'Business plus Hair Salon'] },
         { name: 'Germany', flag: '🇩🇪', businesses: ['Fit Gym Berlin', 'Traditional Restaurant', 'Beauty Care Salon', 'Europe Travel Agency', 'German Bakery Cafe', 'Natural Juice Bar', 'Hair Design Studio'] },
         { name: 'France', flag: '🇫🇷', businesses: ['Paris Fitness Gym', 'French Restaurant', 'Salon de Beauté', 'Voyages Travel Agency', 'Boulangerie Cafe', 'Fruits Juice Bar', 'Coiffure Studio'] },
         { name: 'Japan', flag: '🇯🇵', businesses: ['Tokyo Fitness Gym', 'Ramen Restaurant', 'Beauty Spa Salon', 'Japan Tours Agency', 'Matcha Tea Cafe', 'Smoothie Bar', 'Hair Cutting Salon'] },
@@ -673,9 +673,9 @@ function initializeToastNotifications() {
     
     const services = [
         'Basic Package',
-        'Balanced Package',
-        'Premium Package',
-        'Extended Package',
+        'Business Package',
+        'Business plus Package',
+        'Business pro Package',
         'Website Development Service',
         'ChatBot integration',
         'Mobile app development'
@@ -1067,7 +1067,7 @@ document.addEventListener('click', function (e) {
 // CONSOLE MESSAGES
 // ========================================
 
-console.log('%c🚀 Rank Master - Premium Digital Marketing & Web Development', 'color: #6366f1; font-size: 16px; font-weight: bold;');
+console.log('%c🚀 Rank Master - Business plus Digital Marketing & Web Development', 'color: #6366f1; font-size: 16px; font-weight: bold;');
 console.log('%cWebsite: https://Rank Master.com', 'color: #ec4899; font-size: 12px;');
 console.log('%cPhone: +92 336 9295 295', 'color: #10b981; font-size: 12px;');
 console.log('%cEmail: mailrankmaster@gmail.com', 'color: #0ea5e9; font-size: 12px;');
