@@ -27,12 +27,8 @@
     <!-- Preconnect to External Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Favicons (responsive) -->
-    <link rel="apple-touch-icon" sizes="180x180" href="img/navbar.jpg">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/navbar.jpg">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/navbar.jpg">
-    <link rel="mask-icon" href="img/navbar.jpg" color="#6366f1">
-    <link rel="shortcut icon" href="img/navbar.jpg" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/brandliox.jpg" type="image/x-icon">
     <title>Brandliox - Website Development & Digital Marketing Services | #1 Google Ranking</title>
 
     <!-- Bootstrap 5 CSS -->
@@ -117,37 +113,12 @@
     </script>
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="page-preloader" aria-hidden="false">
-        <div class="preloader-inner" role="status" aria-label="Loading content">
-            <img src="img/preloader" alt="Loading..." class="preloader-img" loading="lazy">
-            <div class="preloader-spinner" aria-hidden="true"></div>
-        </div>
-    </div>
-
-        <script>
-        (function(){
-            // mark body as preloader-active so CSS can lock scrolling
-            try { document.body.classList.add('preloader-active'); } catch(e) {}
-            var preloader = document.getElementById('page-preloader');
-            function hidePreloader(){
-                if(!preloader) return;
-                preloader.setAttribute('aria-hidden','true');
-                document.body.classList.remove('preloader-active');
-                setTimeout(function(){ try{ preloader.style.display='none'; }catch(e){} }, 500);
-            }
-            window.addEventListener('load', hidePreloader);
-            // Fallback: hide after 7s if load didn't fire
-            setTimeout(function(){ if(preloader && preloader.getAttribute('aria-hidden')!=='true') hidePreloader(); }, 7000);
-        })();
-        </script>
-
     <!-- Navbar -->
     <nav class="navbar mt-2 navbar-expand-lg navbar-dark navbar-gradient" style="position: fixed; top: 0; width: 100%; z-index: 1050; border-radius: 30px;">
         <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center fw-bold gradient-text" href="#home">
-                <img src="img/navbar.jpg" alt="Brandliox logo" class="navbar-logo me-2" loading="lazy">
-                <span class="brand-text">Brandliox</span>
+            <a class="navbar-brand fw-bold gradient-text" href="#home">
+                <!-- <i class="fas fa-rocket"></i> -->
+                 Brandliox
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
