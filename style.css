@@ -190,7 +190,7 @@ body {
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: linear-gradient(#4B32A1 0%, #9B308E 40%, #E63E36 75%, #F58220 100%);
+            background: linear-gradient(to right, #4B32A1 0%, #9B308E 40%, #E63E36 75%, #F58220 100%) !important;
             animation: dotPulse 1.5s ease-in-out infinite;
         }
 
