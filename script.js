@@ -658,92 +658,92 @@ function initializeToastNotifications() {
         { 
             name: 'USA', 
             flag: '🇺🇸', 
-            businesses: ['Golden Fitness Gym', 'Sunset Restaurant', 'Beauty Glow Salon', 'Adventure Travel Agency', 'Cozy Coffee Shop', 'Fresh Juice Bar', 'Hair Studio Pro', 'Downtown Diner', 'Elite Wellness Center'],
-            names: ['James', 'Michael', 'William', 'David', 'Christopher', 'Matthew', 'Daniel', 'Andrew', 'Joshua', 'Emily', 'Emma', 'Olivia', 'Sophia', 'Isabella', 'Mia', 'Charlotte', 'Amelia', 'Harper', 'Evelyn', 'Robert', 'John', 'Joseph', 'Thomas', 'Jessica', 'Ashley', 'Jennifer', 'Amanda', 'Stephanie', 'Nicole']
+            businesses: ['Golden Fitness Gym', 'Sunset Restaurant', 'Beauty Glow Salon', 'Adventure Travel Agency', 'Cozy Coffee Shop', 'Fresh Juice Bar', 'Hair Studio Pro', 'Downtown Diner', 'Elite Wellness Center', 'American Dream Spa', 'Liberty Cafe', 'Star Fitness Club'],
+            names: ['James', 'Michael', 'William', 'David', 'Christopher', 'Matthew', 'Daniel', 'Andrew', 'Joshua', 'Emily', 'Emma', 'Olivia', 'Sophia', 'Isabella', 'Mia', 'Charlotte', 'Amelia', 'Harper', 'Evelyn', 'Robert', 'John', 'Joseph', 'Thomas', 'Jessica', 'Ashley', 'Jennifer', 'Amanda', 'Stephanie', 'Nicole', 'Brandon', 'Tyler', 'Austin', 'Kevin', 'Brian', 'Rachel', 'Lauren', 'Samantha', 'Katherine', 'Elizabeth']
         },
         { 
             name: 'UK', 
             flag: '🇬🇧', 
-            businesses: ['Fitness Elite Gym', 'The Royal Restaurant', 'London Beauty Salon', 'British Travel Agency', 'Tea House Cafe', 'Organic Smoothie Bar', 'Westminster Hair Studio', 'The Kings Arms Pub', 'Chelsea Wellness Spa'],
-            names: ['Oliver', 'George', 'Harry', 'Jack', 'Charlie', 'Thomas', 'Jacob', 'Alfie', 'Oscar', 'Amelia', 'Isla', 'Ava', 'Mia', 'Grace', 'Freya', 'Lily', 'Sophie', 'Ivy', 'Ella', 'William', 'James', 'Henry', 'Alexander', 'Charlotte', 'Emily', 'Poppy', 'Jessica', 'Daisy', 'Rosie']
+            businesses: ['Fitness Elite Gym', 'The Royal Restaurant', 'London Beauty Salon', 'British Travel Agency', 'Tea House Cafe', 'Organic Smoothie Bar', 'Westminster Hair Studio', 'The Kings Arms Pub', 'Chelsea Wellness Spa', 'Oxford Bistro', 'Cambridge Cafe', 'Manchester Fitness'],
+            names: ['Oliver', 'George', 'Harry', 'Jack', 'Charlie', 'Arthur', 'Jacob', 'Alfie', 'Oscar', 'Amelia', 'Isla', 'Ava', 'Grace', 'Freya', 'Lily', 'Sophie', 'Ivy', 'Ella', 'Henry', 'Alexander', 'Edward', 'Sebastian', 'Charlotte', 'Poppy', 'Daisy', 'Rosie', 'Florence', 'Willow', 'Sienna', 'Phoebe', 'Evie', 'Elsie', 'Maisie', 'Theodore', 'Freddie', 'Archie', 'Leo', 'Finley', 'Noah', 'Ethan']
         },
         { 
             name: 'Canada', 
             flag: '🇨🇦', 
-            businesses: ['Mountain Fitness Gym', 'Maple Leaf Restaurant', 'Aurora Beauty Salon', 'Canadian Travel Dreams', 'Tim\'s Coffee Shop', 'Health Juice Bar', 'Toronto Hair Studio', 'Vancouver Wellness Center', 'Ottawa Bistro'],
-            names: ['Liam', 'Noah', 'Ethan', 'Lucas', 'Benjamin', 'Logan', 'Mason', 'Elijah', 'Aiden', 'Emma', 'Olivia', 'Ava', 'Sophia', 'Isabella', 'Mia', 'Charlotte', 'Chloe', 'Aria', 'Zoe', 'Jacob', 'Alexander', 'Daniel', 'Ryan', 'Sarah', 'Hannah', 'Madison', 'Abigail', 'Emily', 'Natalie']
+            businesses: ['Mountain Fitness Gym', 'Maple Leaf Restaurant', 'Aurora Beauty Salon', 'Canadian Travel Dreams', 'Tim Hortons Cafe', 'Health Juice Bar', 'Toronto Hair Studio', 'Vancouver Wellness Center', 'Ottawa Bistro', 'Montreal Spa', 'Calgary Fitness Hub', 'Quebec City Cafe'],
+            names: ['Liam', 'Noah', 'Ethan', 'Lucas', 'Benjamin', 'Logan', 'Mason', 'Elijah', 'Aiden', 'Emma', 'Olivia', 'Ava', 'Sophia', 'Isabella', 'Chloe', 'Aria', 'Zoe', 'Alexander', 'Ryan', 'Sarah', 'Hannah', 'Madison', 'Abigail', 'Natalie', 'Owen', 'Jackson', 'Carter', 'Wyatt', 'Jack', 'Luke', 'Jayden', 'Dylan', 'Grayson', 'Layla', 'Riley', 'Zoey', 'Nora', 'Lily', 'Eleanor', 'Hazel']
         },
         { 
             name: 'Australia', 
             flag: '🇦🇺', 
-            businesses: ['Beach Gym Studio', 'Aussie Grill Restaurant', 'Sydney Beauty Salon', 'Outback Travel Agency', 'Melbourne Cafe', 'Fresh Juice Bar', 'Brisbane Hair Salon', 'Perth Wellness Center', 'Gold Coast Bistro'],
-            names: ['Oliver', 'Jack', 'William', 'Noah', 'Thomas', 'James', 'Ethan', 'Lucas', 'Cooper', 'Charlotte', 'Olivia', 'Ava', 'Amelia', 'Mia', 'Grace', 'Chloe', 'Sophie', 'Isla', 'Ella', 'Liam', 'Henry', 'Alexander', 'Max', 'Emily', 'Lily', 'Harper', 'Zoe', 'Matilda', 'Ruby']
+            businesses: ['Beach Gym Studio', 'Aussie Grill Restaurant', 'Sydney Beauty Salon', 'Outback Travel Agency', 'Melbourne Cafe', 'Fresh Juice Bar', 'Brisbane Hair Salon', 'Perth Wellness Center', 'Gold Coast Bistro', 'Adelaide Spa', 'Cairns Fitness Club', 'Darwin Restaurant'],
+            names: ['Oliver', 'Jack', 'William', 'Noah', 'Thomas', 'James', 'Ethan', 'Lucas', 'Cooper', 'Charlotte', 'Olivia', 'Ava', 'Amelia', 'Mia', 'Grace', 'Chloe', 'Sophie', 'Isla', 'Ella', 'Liam', 'Henry', 'Alexander', 'Max', 'Emily', 'Lily', 'Harper', 'Zoe', 'Matilda', 'Ruby', 'Oscar', 'Leo', 'Archer', 'Hudson', 'Harrison', 'Charlie', 'Willow', 'Ivy', 'Sienna', 'Evie', 'Aria']
         },
         { 
             name: 'Germany', 
             flag: '🇩🇪', 
-            businesses: ['Fit Gym Berlin', 'Bratwurst Haus Restaurant', 'Schönheit Beauty Salon', 'Deutschland Travel Agency', 'German Bakery Cafe', 'Natural Juice Bar', 'Munich Hair Design', 'Hamburg Wellness Spa', 'Frankfurt Bistro'],
-            names: ['Maximilian', 'Alexander', 'Paul', 'Leon', 'Lukas', 'Felix', 'Jonas', 'Noah', 'Elias', 'Emma', 'Mia', 'Hannah', 'Sofia', 'Anna', 'Emilia', 'Lena', 'Marie', 'Lea', 'Clara', 'Ben', 'Finn', 'Luis', 'Julian', 'Laura', 'Lina', 'Johanna', 'Amelie', 'Leonie', 'Julia']
+            businesses: ['Fit Gym Berlin', 'Bratwurst Haus', 'Schönheit Beauty Salon', 'Deutschland Travel Agency', 'German Bakery Cafe', 'Natural Juice Bar', 'Munich Hair Design', 'Hamburg Wellness Spa', 'Frankfurt Bistro', 'Cologne Fitness Studio', 'Dresden Restaurant', 'Stuttgart Cafe'],
+            names: ['Maximilian', 'Alexander', 'Paul', 'Leon', 'Lukas', 'Felix', 'Jonas', 'Noah', 'Elias', 'Emma', 'Mia', 'Hannah', 'Sofia', 'Anna', 'Emilia', 'Lena', 'Marie', 'Lea', 'Clara', 'Ben', 'Finn', 'Luis', 'Julian', 'Chris', 'Lina', 'Johanna', 'Amelie', 'Leonie', 'Julia', 'Tim', 'Niklas', 'Jan', 'Moritz', 'David', 'Sarah', 'Lisa', 'Michelle', 'Katharina', 'Sophie', 'Charlotte']
         },
         { 
             name: 'France', 
             flag: '🇫🇷', 
-            businesses: ['Paris Fitness Gym', 'Le Petit Bistro', 'Salon de Beauté Paris', 'Voyages France Agency', 'Boulangerie Parisienne', 'Jus de Fruits Bar', 'Coiffure Lyon', 'Nice Wellness Spa', 'Marseille Cafe'],
-            names: ['Gabriel', 'Louis', 'Raphaël', 'Jules', 'Adam', 'Lucas', 'Léo', 'Hugo', 'Arthur', 'Emma', 'Louise', 'Jade', 'Alice', 'Chloé', 'Lina', 'Mila', 'Léa', 'Manon', 'Rose', 'Nathan', 'Ethan', 'Paul', 'Théo', 'Camille', 'Sarah', 'Inès', 'Léonie', 'Anna', 'Eva']
+            businesses: ['Paris Fitness Gym', 'Le Petit Bistro', 'Salon de Beauté Paris', 'Voyages France Agency', 'Boulangerie Parisienne', 'Jus de Fruits Bar', 'Coiffure Lyon', 'Nice Wellness Spa', 'Marseille Cafe', 'Bordeaux Restaurant', 'Toulouse Fitness', 'Strasbourg Bistro'],
+            names: ['Gabriel', 'Louis', 'Raphaël', 'Jules', 'Adam', 'Lucas', 'Léo', 'Hugo', 'Arthur', 'Emma', 'Louise', 'Jade', 'Alice', 'Chloé', 'Lina', 'Mila', 'Léa', 'Manon', 'Rose', 'Nathan', 'Ethan', 'Paul', 'Théo', 'Camille', 'Sarah', 'Inès', 'Léonie', 'Anna', 'Eva', 'Tom', 'Mathis', 'Enzo', 'Maxime', 'Antoine', 'Clara', 'Juliette', 'Marie', 'Charlotte', 'Ambre', 'Zoé']
         },
         { 
             name: 'Japan', 
             flag: '🇯🇵', 
-            businesses: ['Tokyo Fitness Gym', 'Sakura Ramen House', 'Beauty Spa Osaka', 'Japan Tours Agency', 'Matcha Tea House', 'Smoothie Bar Kyoto', 'Hair Salon Shibuya', 'Zen Wellness Center', 'Sushi Paradise'],
-            names: ['Haruto', 'Yuto', 'Sota', 'Yuki', 'Hayato', 'Haruki', 'Ryota', 'Kota', 'Kaito', 'Yui', 'Rio', 'Koharu', 'Hina', 'Himari', 'Mei', 'Miyu', 'Sakura', 'Aoi', 'Yuna', 'Ren', 'Takumi', 'Shota', 'Riku', 'Akari', 'Mio', 'Saki', 'Rina', 'Nanami', 'Honoka']
+            businesses: ['Tokyo Fitness Gym', 'Sakura Ramen House', 'Beauty Spa Osaka', 'Japan Tours Agency', 'Matcha Tea House', 'Smoothie Bar Kyoto', 'Hair Salon Shibuya', 'Zen Wellness Center', 'Sushi Paradise', 'Yokohama Restaurant', 'Nagoya Fitness Club', 'Fukuoka Cafe'],
+            names: ['Haruto', 'Yuto', 'Sota', 'Yuki', 'Hayato', 'Haruki', 'Ryota', 'Kota', 'Kaito', 'Yui', 'Rio', 'Koharu', 'Hina', 'Himari', 'Mei', 'Miyu', 'Sakura', 'Aoi', 'Yuna', 'Ren', 'Takumi', 'Shota', 'Riku', 'Akari', 'Mio', 'Saki', 'Rina', 'Nanami', 'Honoka', 'Asahi', 'Minato', 'Yusei', 'Daiki', 'Kento', 'Ayaka', 'Misaki', 'Kanon', 'Shiori', 'Riko', 'Yuzuki']
         },
         { 
             name: 'India', 
             flag: '🇮🇳', 
-            businesses: ['Fit India Gym Mumbai', 'Taj Mahal Restaurant', 'Beauty Parlor Delhi', 'Incredible India Tours', 'Chai Wala Cafe', 'Fresh Juice Corner', 'Hair Salon Bangalore', 'Ayurveda Wellness Spa', 'Spice Garden Restaurant'],
-            names: ['Aarav', 'Vivaan', 'Aditya', 'Vihaan', 'Arjun', 'Sai', 'Reyansh', 'Ayaan', 'Krishna', 'Aadhya', 'Ananya', 'Diya', 'Priya', 'Saanvi', 'Aanya', 'Isha', 'Kavya', 'Riya', 'Pooja', 'Rohan', 'Rahul', 'Amit', 'Vikram', 'Neha', 'Shreya', 'Deepika', 'Anjali', 'Meera', 'Nisha']
+            businesses: ['Fit India Gym Mumbai', 'Taj Mahal Restaurant', 'Beauty Parlor Delhi', 'Incredible India Tours', 'Chai Wala Cafe', 'Fresh Juice Corner', 'Hair Salon Bangalore', 'Ayurveda Wellness Spa', 'Spice Garden Restaurant', 'Chennai Fitness Club', 'Kolkata Bistro', 'Hyderabad Cafe'],
+            names: ['Aarav', 'Vivaan', 'Aditya', 'Vihaan', 'Arjun', 'Sai', 'Reyansh', 'Ayaan', 'Krishna', 'Aadhya', 'Ananya', 'Diya', 'Saanvi', 'Aanya', 'Isha', 'Kavya', 'Riya', 'Pooja', 'Rohan', 'Rahul', 'Amit', 'Vikram', 'Neha', 'Shreya', 'Deepika', 'Anjali', 'Meera', 'Nisha', 'Pranav', 'Karthik', 'Siddharth', 'Varun', 'Nikhil', 'Tanvi', 'Ishita', 'Kritika', 'Aditi', 'Simran', 'Nikita', 'Divya']
         },
         { 
             name: 'Brazil', 
             flag: '🇧🇷', 
-            businesses: ['Rio Fitness Gym', 'Churrascaria Gaúcha', 'Salão de Beleza Rio', 'Brasil Travel Agency', 'Açaí Corner Cafe', 'Suco Natural Bar', 'Cabelo Studio São Paulo', 'Copacabana Wellness Spa', 'Feijoada House'],
-            names: ['Miguel', 'Arthur', 'Heitor', 'Bernardo', 'Davi', 'Gabriel', 'Pedro', 'Samuel', 'Lucas', 'Maria', 'Alice', 'Sophia', 'Laura', 'Isabella', 'Manuela', 'Júlia', 'Helena', 'Valentina', 'Heloísa', 'Matheus', 'Rafael', 'Gustavo', 'Felipe', 'Ana', 'Beatriz', 'Mariana', 'Giovanna', 'Letícia', 'Larissa']
+            businesses: ['Rio Fitness Gym', 'Churrascaria Gaúcha', 'Salão de Beleza Rio', 'Brasil Travel Agency', 'Açaí Corner Cafe', 'Suco Natural Bar', 'Cabelo Studio São Paulo', 'Copacabana Wellness Spa', 'Feijoada House', 'Salvador Restaurant', 'Brasilia Fitness', 'Recife Bistro'],
+            names: ['Miguel', 'Arthur', 'Heitor', 'Bernardo', 'Davi', 'Gabriel', 'Pedro', 'Samuel', 'Lucas', 'Maria', 'Alice', 'Sophia', 'Laura', 'Isabella', 'Manuela', 'Júlia', 'Helena', 'Valentina', 'Heloísa', 'Matheus', 'Rafael', 'Gustavo', 'Felipe', 'Ana', 'Beatriz', 'Mariana', 'Giovanna', 'Letícia', 'Larissa', 'Thiago', 'Bruno', 'Leonardo', 'Enzo', 'João', 'Camila', 'Carolina', 'Fernanda', 'Gabriela', 'Juliana', 'Natália']
         },
         { 
             name: 'UAE', 
             flag: '🇦🇪', 
-            businesses: ['Dubai Fitness Gym', 'Al Majlis Restaurant', 'Luxury Beauty Salon Dubai', 'Emirates Travel Agency', 'Arabic Coffee House', 'Fresh Juice Bar Abu Dhabi', 'Hair Studio Marina', 'Burj Wellness Spa', 'Desert Rose Cafe'],
-            names: ['Mohammed', 'Ahmed', 'Rashid', 'Khalid', 'Sultan', 'Saeed', 'Omar', 'Hamad', 'Abdullah', 'Fatima', 'Mariam', 'Aisha', 'Noura', 'Hessa', 'Latifa', 'Shamsa', 'Maitha', 'Reem', 'Sara', 'Majid', 'Faisal', 'Zayed', 'Mansoor', 'Maryam', 'Amna', 'Shamma', 'Mouza', 'Khawla', 'Hind']
+            businesses: ['Dubai Fitness Gym', 'Al Majlis Restaurant', 'Luxury Beauty Salon Dubai', 'Emirates Travel Agency', 'Arabic Coffee House', 'Fresh Juice Bar Abu Dhabi', 'Hair Studio Marina', 'Burj Wellness Spa', 'Desert Rose Cafe', 'Sharjah Restaurant', 'Ajman Fitness Club', 'Ras Al Khaimah Bistro'],
+            names: ['Mohammed', 'Ahmed', 'Rashid', 'Khalid', 'Sultan', 'Saeed', 'Omar', 'Hamad', 'Abdullah', 'Fatima', 'Mariam', 'Aisha', 'Noura', 'Hessa', 'Latifa', 'Shamsa', 'Maitha', 'Reem', 'Sara', 'Majid', 'Faisal', 'Zayed', 'Mansoor', 'Maryam', 'Amna', 'Shamma', 'Mouza', 'Khawla', 'Hind', 'Yousuf', 'Ali', 'Hassan', 'Ibrahim', 'Nasser', 'Layla', 'Dana', 'Sheikha', 'Alia', 'Manal', 'Hala']
         },
         { 
             name: 'Pakistan', 
             flag: '🇵🇰', 
-            businesses: ['Karachi Fitness Club', 'Lahore Biryani House', 'Beauty Parlor Islamabad', 'Pakistan Tours Agency', 'Chai Khana', 'Fresh Juice Corner Lahore', 'Hair Salon Multan', 'Rawalpindi Wellness Center', 'Peshawar Kabab House'],
-            names: ['Hamza', 'Bilal', 'Usman', 'Zain', 'Saad', 'Ahsan', 'Fahad', 'Imran', 'Tariq', 'Ayesha', 'Sana', 'Hira', 'Maryam', 'Zara', 'Khadija', 'Amina', 'Bushra', 'Nadia', 'Rabia', 'Hassan', 'Hussain', 'Arslan', 'Danish', 'Fatima', 'Asma', 'Mehwish', 'Sadia', 'Noor', 'Nimra']
+            businesses: ['Karachi Fitness Club', 'Lahore Biryani House', 'Beauty Parlor Islamabad', 'Pakistan Tours Agency', 'Chai Khana Lahore', 'Fresh Juice Corner Karachi', 'Hair Salon Multan', 'Rawalpindi Wellness Center', 'Peshawar Kabab House', 'Faisalabad Restaurant', 'Quetta Fitness Gym', 'Sialkot Cafe'],
+            names: ['Hamza', 'Bilal', 'Usman', 'Zain', 'Saad', 'Ahsan', 'Fahad', 'Imran', 'Tariq', 'Ayesha', 'Sana', 'Hira', 'Maryam', 'Zara', 'Khadija', 'Amina', 'Bushra', 'Nadia', 'Rabia', 'Hassan', 'Hussain', 'Arslan', 'Danish', 'Asma', 'Mehwish', 'Sadia', 'Noor', 'Nimra', 'Ahmed', 'Ali', 'Waqar', 'Kamran', 'Adnan', 'Farah', 'Saima', 'Uzma', 'Sidra', 'Iqra', 'Madiha', 'Anam']
         },
         { 
             name: 'Singapore', 
             flag: '🇸🇬', 
-            businesses: ['Singapore Fitness Hub', 'Hawker Paradise Restaurant', 'Orchard Beauty Salon', 'Lion City Travel Agency', 'Kopitiam Traditional Cafe', 'Marina Juice Bar', 'Hair Studio Raffles', 'Sentosa Wellness Spa', 'Little India Bistro'],
-            names: ['Wei Jie', 'Jun Wei', 'Zhi Wei', 'Jia Hao', 'Yi Xuan', 'Zi Hao', 'Jia Jun', 'Wei Liang', 'Xin Yi', 'Xin Hui', 'Jia Yi', 'Hui Ling', 'Xin Ying', 'Jia Xin', 'Yi Ling', 'Hui Min', 'Jia Hui', 'Xin Yee', 'Zi Xuan', 'Ming Wei', 'Kai Xiang', 'Zhi Hao', 'Jun Jie', 'Mei Ling', 'Shu Ting', 'Li Ying', 'Hui Xin', 'Jing Yi', 'Wen Xin']
+            businesses: ['Singapore Fitness Hub', 'Hawker Paradise Restaurant', 'Orchard Beauty Salon', 'Lion City Travel Agency', 'Kopitiam Traditional Cafe', 'Marina Juice Bar', 'Hair Studio Raffles', 'Sentosa Wellness Spa', 'Little India Bistro', 'Chinatown Restaurant', 'Bugis Fitness Club', 'Clarke Quay Cafe'],
+            names: ['Wei Jie', 'Jun Wei', 'Zhi Wei', 'Jia Hao', 'Yi Xuan', 'Zi Hao', 'Jia Jun', 'Wei Liang', 'Xin Yi', 'Xin Hui', 'Jia Yi', 'Hui Ling', 'Xin Ying', 'Jia Xin', 'Yi Ling', 'Hui Min', 'Jia Hui', 'Xin Yee', 'Zi Xuan', 'Ming Wei', 'Kai Xiang', 'Zhi Hao', 'Jun Jie', 'Mei Ling', 'Shu Ting', 'Li Ying', 'Hui Xin', 'Jing Yi', 'Wen Xin', 'Yu Xuan', 'Rui En', 'Yi Jun', 'Hao Wei', 'Shi Jie', 'Pei Xuan', 'Xiao Hui', 'Ying Xin', 'Wen Hui', 'Yu Ting', 'Jing Wen']
         },
         { 
             name: 'Saudi Arabia', 
             flag: '🇸🇦', 
-            businesses: ['Riyadh Fitness Center', 'Al Baik Restaurant', 'Jeddah Beauty Lounge', 'Saudi Travel Agency', 'Arabic Coffee Majlis', 'Fresh Juice Bar Riyadh', 'Hair Salon Dammam', 'Makkah Wellness Spa', 'Kabsa House Restaurant'],
-            names: ['Mohammed', 'Abdullah', 'Abdulrahman', 'Faisal', 'Khalid', 'Salman', 'Saud', 'Turki', 'Nasser', 'Nora', 'Sara', 'Lama', 'Hala', 'Reem', 'Asma', 'Maha', 'Nouf', 'Dalal', 'Haifa', 'Sultan', 'Bandar', 'Fahad', 'Nawaf', 'Fatima', 'Aisha', 'Mariam', 'Jawaher', 'Abeer', 'Wafa']
+            businesses: ['Riyadh Fitness Center', 'Al Baik Restaurant', 'Jeddah Beauty Lounge', 'Saudi Travel Agency', 'Arabic Coffee Majlis', 'Fresh Juice Bar Riyadh', 'Hair Salon Dammam', 'Makkah Wellness Spa', 'Kabsa House Restaurant', 'Medina Cafe', 'Taif Fitness Club', 'Khobar Bistro'],
+            names: ['Mohammed', 'Abdullah', 'Abdulrahman', 'Faisal', 'Khalid', 'Salman', 'Saud', 'Turki', 'Nasser', 'Nora', 'Sara', 'Lama', 'Hala', 'Reem', 'Asma', 'Maha', 'Nouf', 'Dalal', 'Haifa', 'Sultan', 'Bandar', 'Fahad', 'Nawaf', 'Fatima', 'Aisha', 'Mariam', 'Jawaher', 'Abeer', 'Wafa', 'Abdulaziz', 'Omar', 'Ali', 'Ahmad', 'Youssef', 'Arwa', 'Ghada', 'Lamia', 'Mashael', 'Shahad', 'Razan']
         },
         { 
             name: 'South Africa', 
             flag: '🇿🇦', 
-            businesses: ['Cape Town Fitness Gym', 'Braai House Restaurant', 'Johannesburg Beauty Salon', 'Safari Travel Agency', 'Rooibos Tea Cafe', 'Fresh Juice Bar Durban', 'Hair Salon Pretoria', 'Table Mountain Wellness Spa', 'Ubuntu Bistro'],
-            names: ['Liam', 'Ethan', 'Sipho', 'Thabo', 'Johan', 'Pieter', 'Andile', 'Bongani', 'Kagiso', 'Lerato', 'Naledi', 'Thandiwe', 'Zanele', 'Nomvula', 'Emma', 'Mia', 'Chloe', 'Sarah', 'Jessica', 'David', 'Michael', 'Tshepo', 'Mandla', 'Palesa', 'Lindiwe', 'Ayanda', 'Precious', 'Grace', 'Hope']
+            businesses: ['Cape Town Fitness Gym', 'Braai House Restaurant', 'Johannesburg Beauty Salon', 'Safari Travel Agency', 'Rooibos Tea Cafe', 'Fresh Juice Bar Durban', 'Hair Salon Pretoria', 'Table Mountain Wellness Spa', 'Ubuntu Bistro', 'Soweto Restaurant', 'Port Elizabeth Fitness', 'Bloemfontein Cafe'],
+            names: ['Liam', 'Ethan', 'Sipho', 'Thabo', 'Johan', 'Pieter', 'Andile', 'Bongani', 'Kagiso', 'Lerato', 'Naledi', 'Thandiwe', 'Zanele', 'Nomvula', 'Emma', 'Mia', 'Chloe', 'Sarah', 'Jessica', 'David', 'Michael', 'Tshepo', 'Mandla', 'Palesa', 'Lindiwe', 'Ayanda', 'Precious', 'Grace', 'Hope', 'Willem', 'Johannes', 'Sibusiso', 'Themba', 'Neo', 'Khanyi', 'Mbali', 'Nandi', 'Zinhle', 'Thandi', 'Nokuthula']
         },
         { 
             name: 'Italy', 
             flag: '🇮🇹', 
-            businesses: ['Roma Fitness Gym', 'Trattoria Milano', 'Salone di Bellezza Venezia', 'Italia Travel Agency', 'Caffè Napoli', 'Succo Fresco Bar', 'Parrucchiere Firenze', 'Toscana Wellness Spa', 'Pizzeria Bella Italia'],
-            names: ['Francesco', 'Leonardo', 'Alessandro', 'Lorenzo', 'Matteo', 'Andrea', 'Gabriele', 'Riccardo', 'Tommaso', 'Sofia', 'Aurora', 'Giulia', 'Ginevra', 'Alice', 'Emma', 'Giorgia', 'Greta', 'Beatrice', 'Anna', 'Marco', 'Luca', 'Giuseppe', 'Antonio', 'Chiara', 'Martina', 'Sara', 'Francesca', 'Valentina', 'Alessia']
+            businesses: ['Roma Fitness Gym', 'Trattoria Milano', 'Salone di Bellezza Venezia', 'Italia Travel Agency', 'Caffè Napoli', 'Succo Fresco Bar', 'Parrucchiere Firenze', 'Toscana Wellness Spa', 'Pizzeria Bella Italia', 'Bologna Restaurant', 'Torino Fitness Club', 'Palermo Cafe'],
+            names: ['Francesco', 'Leonardo', 'Alessandro', 'Lorenzo', 'Matteo', 'Andrea', 'Gabriele', 'Riccardo', 'Tommaso', 'Sofia', 'Aurora', 'Giulia', 'Ginevra', 'Alice', 'Emma', 'Giorgia', 'Greta', 'Beatrice', 'Anna', 'Marco', 'Luca', 'Giuseppe', 'Antonio', 'Chiara', 'Martina', 'Sara', 'Francesca', 'Valentina', 'Alessia', 'Davide', 'Federico', 'Simone', 'Filippo', 'Edoardo', 'Elena', 'Elisa', 'Federica', 'Silvia', 'Roberta', 'Claudia']
         }
     ];
 
@@ -756,57 +756,56 @@ function initializeToastNotifications() {
         'Google SEO Optimization'
     ];
 
-    // Track used names to avoid repetition
-    let usedCombinations = new Set();
-    let notificationCount = 0;
-    const maxCombinations = 500; // Reset after this many to prevent memory issues
-
-    function getUniqueNotification() {
-        let attempts = 0;
-        const maxAttempts = 50;
-
-        while (attempts < maxAttempts) {
-            const country = countries[Math.floor(Math.random() * countries.length)];
-            const name = country.names[Math.floor(Math.random() * country.names.length)];
-            const business = country.businesses[Math.floor(Math.random() * country.businesses.length)];
-            const service = services[Math.floor(Math.random() * services.length)];
-            
-            const combinationKey = `${country.name}-${name}`;
-
-            if (!usedCombinations.has(combinationKey)) {
-                usedCombinations.add(combinationKey);
-                notificationCount++;
-
-                // Reset used combinations periodically to allow names to appear again after some time
-                if (notificationCount >= maxCombinations) {
-                    usedCombinations.clear();
-                    notificationCount = 0;
-                }
-
-                return {
-                    flag: country.flag,
-                    name: name,
-                    business: business,
-                    service: service
-                };
-            }
-            attempts++;
+    // Create a queue of pre-generated unique notifications
+    let notificationQueue = [];
+    
+    function generateNotificationQueue() {
+        const allCombinations = [];
+        
+        // Generate all possible unique combinations
+        countries.forEach(country => {
+            country.names.forEach(name => {
+                country.businesses.forEach(business => {
+                    services.forEach(service => {
+                        allCombinations.push({
+                            flag: country.flag,
+                            name: name,
+                            business: business,
+                            service: service,
+                            country: country.name
+                        });
+                    });
+                });
+            });
+        });
+        
+        // Shuffle the array using Fisher-Yates algorithm
+        for (let i = allCombinations.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [allCombinations[i], allCombinations[j]] = [allCombinations[j], allCombinations[i]];
         }
+        
+        return allCombinations;
+    }
 
-        // If all combinations exhausted, reset and try again
-        usedCombinations.clear();
-        notificationCount = 0;
-        const country = countries[Math.floor(Math.random() * countries.length)];
-        return {
-            flag: country.flag,
-            name: country.names[Math.floor(Math.random() * country.names.length)],
-            business: country.businesses[Math.floor(Math.random() * country.businesses.length)],
-            service: services[Math.floor(Math.random() * services.length)]
-        };
+    // Initialize the queue
+    notificationQueue = generateNotificationQueue();
+    let currentIndex = 0;
+
+    function getNextNotification() {
+        // If we've gone through all combinations, reshuffle
+        if (currentIndex >= notificationQueue.length) {
+            notificationQueue = generateNotificationQueue();
+            currentIndex = 0;
+        }
+        
+        const notification = notificationQueue[currentIndex];
+        currentIndex++;
+        return notification;
     }
 
     function createNotification() {
-        const notification = getUniqueNotification();
+        const notification = getNextNotification();
         const closeId = 'toast-close-btn-' + Date.now();
 
         const notificationHtml = `
@@ -815,7 +814,7 @@ function initializeToastNotifications() {
                     <i class="fas fa-check-circle" style="font-size: 20px; color: white;"></i>
                     <div>
                         <div style="font-weight: 600; margin-bottom: 2px;">${notification.flag} ${notification.name}</div>
-                        <div style="font-size: 13px; opacity: 0.95;"><strong>${notification.business}</strong> — Bought ${notification.service}</div>
+                        <div style="font-size: 13px; opacity: 0.95;"><strong>${notification.business}</strong> — bought ${notification.service}</div>
                     </div>
                 </div>
                 <button id="${closeId}" style="
