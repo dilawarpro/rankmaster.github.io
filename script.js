@@ -653,97 +653,159 @@ function escapeHtml(text) {
 // ========================================
 
 function initializeToastNotifications() {
-    // Country data with flags, local businesses, and country-specific names
+    // Country data with flags, gender-specific businesses, and names
     const countries = [
         { 
             name: 'USA', 
             flag: '🇺🇸', 
-            businesses: ['Golden Fitness Gym', 'Sunset Restaurant', 'Beauty Glow Salon', 'Adventure Travel Agency', 'Cozy Coffee Shop', 'Fresh Juice Bar', 'Hair Studio Pro', 'Downtown Diner', 'Elite Wellness Center', 'American Dream Spa', 'Liberty Cafe', 'Star Fitness Club'],
-            names: ['James', 'Michael', 'William', 'David', 'Christopher', 'Matthew', 'Daniel', 'Andrew', 'Joshua', 'Emily', 'Emma', 'Olivia', 'Sophia', 'Isabella', 'Mia', 'Charlotte', 'Amelia', 'Harper', 'Evelyn', 'Robert', 'John', 'Joseph', 'Thomas', 'Jessica', 'Ashley', 'Jennifer', 'Amanda', 'Stephanie', 'Nicole', 'Brandon', 'Tyler', 'Austin', 'Kevin', 'Brian', 'Rachel', 'Lauren', 'Samantha', 'Katherine', 'Elizabeth']
+            maleBusinesses: ['Golden Fitness Gym', 'Auto Repair Shop', 'Tech Solutions Hub', 'Construction Pro Services', 'Sports Equipment Store', 'Barber Shop Downtown', 'Hardware Store', 'Car Wash Express', 'Security Services', 'Plumbing Solutions'],
+            femaleBusinesses: ['Beauty Glow Salon', 'Nail Art Studio', 'Bridal Boutique', 'Flower Shop', 'Yoga & Wellness Studio', 'Skincare Clinic', 'Fashion Boutique', 'Cake & Bakery Shop', 'Jewelry Store', 'Day Spa Retreat'],
+            maleNames: ['James', 'Michael', 'William', 'David', 'Christopher', 'Matthew', 'Daniel', 'Andrew', 'Joshua', 'Robert', 'John', 'Joseph', 'Thomas', 'Brandon', 'Tyler', 'Austin', 'Kevin', 'Brian', 'Ryan', 'Eric'],
+            femaleNames: ['Emily', 'Emma', 'Olivia', 'Sophia', 'Isabella', 'Mia', 'Charlotte', 'Amelia', 'Harper', 'Evelyn', 'Jessica', 'Ashley', 'Jennifer', 'Amanda', 'Stephanie', 'Nicole', 'Rachel', 'Lauren', 'Samantha', 'Katherine']
         },
         { 
             name: 'UK', 
             flag: '🇬🇧', 
-            businesses: ['Fitness Elite Gym', 'The Royal Restaurant', 'London Beauty Salon', 'British Travel Agency', 'Tea House Cafe', 'Organic Smoothie Bar', 'Westminster Hair Studio', 'The Kings Arms Pub', 'Chelsea Wellness Spa', 'Oxford Bistro', 'Cambridge Cafe', 'Manchester Fitness'],
-            names: ['Oliver', 'George', 'Harry', 'Jack', 'Charlie', 'Arthur', 'Jacob', 'Alfie', 'Oscar', 'Amelia', 'Isla', 'Ava', 'Grace', 'Freya', 'Lily', 'Sophie', 'Ivy', 'Ella', 'Henry', 'Alexander', 'Edward', 'Sebastian', 'Charlotte', 'Poppy', 'Daisy', 'Rosie', 'Florence', 'Willow', 'Sienna', 'Phoebe', 'Evie', 'Elsie', 'Maisie', 'Theodore', 'Freddie', 'Archie', 'Leo', 'Finley', 'Noah', 'Ethan']
+            maleBusinesses: ['Elite Fitness Gym', 'Auto Garage London', 'Tech Innovations Ltd', 'Building Contractors', 'Sports Direct Shop', 'Gentlemen Barber', 'Tool Shop', 'Valet Car Services', 'Security Solutions UK', 'Plumbing Experts'],
+            femaleBusinesses: ['London Beauty Salon', 'Nail Bar Chelsea', 'Bridal Studio Westminster', 'Flower Boutique', 'Pilates Studio', 'Skin Therapy Clinic', 'Fashion House London', 'Cupcake Corner', 'Diamond Jewellers', 'Luxury Day Spa'],
+            maleNames: ['Oliver', 'George', 'Harry', 'Jack', 'Charlie', 'Arthur', 'Jacob', 'Alfie', 'Oscar', 'Henry', 'Alexander', 'Edward', 'Sebastian', 'Theodore', 'Freddie', 'Archie', 'Leo', 'Finley', 'Noah', 'Ethan'],
+            femaleNames: ['Amelia', 'Isla', 'Ava', 'Grace', 'Freya', 'Lily', 'Sophie', 'Ivy', 'Ella', 'Charlotte', 'Poppy', 'Daisy', 'Rosie', 'Florence', 'Willow', 'Sienna', 'Phoebe', 'Evie', 'Elsie', 'Maisie']
         },
         { 
             name: 'Canada', 
             flag: '🇨🇦', 
-            businesses: ['Mountain Fitness Gym', 'Maple Leaf Restaurant', 'Aurora Beauty Salon', 'Canadian Travel Dreams', 'Tim Hortons Cafe', 'Health Juice Bar', 'Toronto Hair Studio', 'Vancouver Wellness Center', 'Ottawa Bistro', 'Montreal Spa', 'Calgary Fitness Hub', 'Quebec City Cafe'],
-            names: ['Liam', 'Noah', 'Ethan', 'Lucas', 'Benjamin', 'Logan', 'Mason', 'Elijah', 'Aiden', 'Emma', 'Olivia', 'Ava', 'Sophia', 'Isabella', 'Chloe', 'Aria', 'Zoe', 'Alexander', 'Ryan', 'Sarah', 'Hannah', 'Madison', 'Abigail', 'Natalie', 'Owen', 'Jackson', 'Carter', 'Wyatt', 'Jack', 'Luke', 'Jayden', 'Dylan', 'Grayson', 'Layla', 'Riley', 'Zoey', 'Nora', 'Lily', 'Eleanor', 'Hazel']
+            maleBusinesses: ['Mountain Fitness Club', 'Maple Auto Services', 'Tech Hub Toronto', 'Canadian Builders Inc', 'Sports Gear Canada', 'Classic Barber Shop', 'Home Hardware Store', 'Express Car Wash', 'Guardian Security', 'Pro Plumbing Services'],
+            femaleBusinesses: ['Aurora Beauty Salon', 'Nail Spa Vancouver', 'Bridal Dreams Boutique', 'Blossom Florist', 'Serenity Yoga Studio', 'Glow Skincare Clinic', 'Chic Fashion Boutique', 'Sweet Delights Bakery', 'Elegant Jewellery', 'Tranquil Day Spa'],
+            maleNames: ['Liam', 'Noah', 'Ethan', 'Lucas', 'Benjamin', 'Logan', 'Mason', 'Elijah', 'Aiden', 'Alexander', 'Ryan', 'Owen', 'Jackson', 'Carter', 'Wyatt', 'Jack', 'Luke', 'Jayden', 'Dylan', 'Grayson'],
+            femaleNames: ['Emma', 'Olivia', 'Ava', 'Sophia', 'Isabella', 'Chloe', 'Aria', 'Zoe', 'Sarah', 'Hannah', 'Madison', 'Abigail', 'Natalie', 'Layla', 'Riley', 'Zoey', 'Nora', 'Lily', 'Eleanor', 'Hazel']
         },
         { 
             name: 'Australia', 
             flag: '🇦🇺', 
-            businesses: ['Beach Gym Studio', 'Aussie Grill Restaurant', 'Sydney Beauty Salon', 'Outback Travel Agency', 'Melbourne Cafe', 'Fresh Juice Bar', 'Brisbane Hair Salon', 'Perth Wellness Center', 'Gold Coast Bistro', 'Adelaide Spa', 'Cairns Fitness Club', 'Darwin Restaurant'],
-            names: ['Oliver', 'Jack', 'William', 'Noah', 'Thomas', 'James', 'Ethan', 'Lucas', 'Cooper', 'Charlotte', 'Olivia', 'Ava', 'Amelia', 'Mia', 'Grace', 'Chloe', 'Sophie', 'Isla', 'Ella', 'Liam', 'Henry', 'Alexander', 'Max', 'Emily', 'Lily', 'Harper', 'Zoe', 'Matilda', 'Ruby', 'Oscar', 'Leo', 'Archer', 'Hudson', 'Harrison', 'Charlie', 'Willow', 'Ivy', 'Sienna', 'Evie', 'Aria']
+            maleBusinesses: ['Beach Fitness Gym', 'Aussie Auto Repairs', 'Tech Solutions Sydney', 'Outback Builders', 'Sports Hub Melbourne', 'Classic Cuts Barber', 'Trade Tools Store', 'Shine Car Wash', 'Secure Guard Services', 'Reliable Plumbing'],
+            femaleBusinesses: ['Sydney Beauty Lounge', 'Nail Art Brisbane', 'Bridal House Melbourne', 'Fresh Flowers Shop', 'Zen Yoga Studio', 'Skin Glow Clinic', 'Style Boutique', 'Cupcake Heaven', 'Gold Coast Jewellers', 'Bliss Day Spa'],
+            maleNames: ['Oliver', 'Jack', 'William', 'Noah', 'Thomas', 'James', 'Ethan', 'Lucas', 'Cooper', 'Liam', 'Henry', 'Alexander', 'Max', 'Oscar', 'Leo', 'Archer', 'Hudson', 'Harrison', 'Charlie', 'Mason'],
+            femaleNames: ['Charlotte', 'Olivia', 'Ava', 'Amelia', 'Mia', 'Grace', 'Chloe', 'Sophie', 'Isla', 'Ella', 'Emily', 'Lily', 'Harper', 'Zoe', 'Matilda', 'Ruby', 'Willow', 'Ivy', 'Sienna', 'Evie']
         },
         { 
             name: 'Germany', 
             flag: '🇩🇪', 
-            businesses: ['Fit Gym Berlin', 'Bratwurst Haus', 'Schönheit Beauty Salon', 'Deutschland Travel Agency', 'German Bakery Cafe', 'Natural Juice Bar', 'Munich Hair Design', 'Hamburg Wellness Spa', 'Frankfurt Bistro', 'Cologne Fitness Studio', 'Dresden Restaurant', 'Stuttgart Cafe'],
-            names: ['Maximilian', 'Alexander', 'Paul', 'Leon', 'Lukas', 'Felix', 'Jonas', 'Noah', 'Elias', 'Emma', 'Mia', 'Hannah', 'Sofia', 'Anna', 'Emilia', 'Lena', 'Marie', 'Lea', 'Clara', 'Ben', 'Finn', 'Luis', 'Julian', 'Chris', 'Lina', 'Johanna', 'Amelie', 'Leonie', 'Julia', 'Tim', 'Niklas', 'Jan', 'Moritz', 'David', 'Sarah', 'Lisa', 'Michelle', 'Katharina', 'Sophie', 'Charlotte']
+            maleBusinesses: ['Fit Gym Berlin', 'Auto Werkstatt München', 'Tech Lösungen Hamburg', 'Bau Profis GmbH', 'Sport Shop Frankfurt', 'Herren Friseur', 'Baumarkt Berlin', 'Auto Pflege Service', 'Sicherheit Dienste', 'Sanitär Technik'],
+            femaleBusinesses: ['Schönheit Salon Berlin', 'Nagel Studio München', 'Braut Boutique', 'Blumen Laden', 'Yoga Zentrum', 'Hautpflege Klinik', 'Mode Boutique', 'Konditorei Café', 'Schmuck Geschäft', 'Wellness Spa'],
+            maleNames: ['Maximilian', 'Alexander', 'Paul', 'Leon', 'Lukas', 'Felix', 'Jonas', 'Noah', 'Elias', 'Ben', 'Finn', 'Luis', 'Julian', 'Tim', 'Niklas', 'Jan', 'Moritz', 'David', 'Philipp', 'Tobias'],
+            femaleNames: ['Emma', 'Mia', 'Hannah', 'Sofia', 'Anna', 'Emilia', 'Lena', 'Marie', 'Lea', 'Clara', 'Laura', 'Lina', 'Johanna', 'Amelie', 'Leonie', 'Julia', 'Sarah', 'Lisa', 'Michelle', 'Katharina']
         },
         { 
             name: 'France', 
             flag: '🇫🇷', 
-            businesses: ['Paris Fitness Gym', 'Le Petit Bistro', 'Salon de Beauté Paris', 'Voyages France Agency', 'Boulangerie Parisienne', 'Jus de Fruits Bar', 'Coiffure Lyon', 'Nice Wellness Spa', 'Marseille Cafe', 'Bordeaux Restaurant', 'Toulouse Fitness', 'Strasbourg Bistro'],
-            names: ['Gabriel', 'Louis', 'Raphaël', 'Jules', 'Adam', 'Lucas', 'Léo', 'Hugo', 'Arthur', 'Emma', 'Louise', 'Jade', 'Alice', 'Chloé', 'Lina', 'Mila', 'Léa', 'Manon', 'Rose', 'Nathan', 'Ethan', 'Paul', 'Théo', 'Camille', 'Sarah', 'Inès', 'Léonie', 'Anna', 'Eva', 'Tom', 'Mathis', 'Enzo', 'Maxime', 'Antoine', 'Clara', 'Juliette', 'Marie', 'Charlotte', 'Ambre', 'Zoé']
+            maleBusinesses: ['Paris Fitness Club', 'Garage Auto Lyon', 'Solutions Tech Paris', 'Constructeurs Pro', 'Sport Boutique', 'Barbier Parisien', 'Bricolage Store', 'Lavage Auto Express', 'Sécurité Services', 'Plomberie Expert'],
+            femaleBusinesses: ['Salon de Beauté Paris', 'Nail Bar Champs-Élysées', 'Boutique Mariée', 'Fleuriste Paris', 'Studio de Yoga', 'Clinique Beauté', 'Mode Boutique', 'Pâtisserie Parisienne', 'Bijouterie Élégante', 'Spa Luxe Paris'],
+            maleNames: ['Gabriel', 'Louis', 'Raphaël', 'Jules', 'Adam', 'Lucas', 'Léo', 'Hugo', 'Arthur', 'Nathan', 'Ethan', 'Paul', 'Théo', 'Tom', 'Mathis', 'Enzo', 'Maxime', 'Antoine', 'Alexandre', 'Victor'],
+            femaleNames: ['Emma', 'Louise', 'Jade', 'Alice', 'Chloé', 'Lina', 'Mila', 'Léa', 'Manon', 'Rose', 'Camille', 'Sarah', 'Inès', 'Léonie', 'Anna', 'Eva', 'Clara', 'Juliette', 'Marie', 'Charlotte']
         },
         { 
             name: 'Japan', 
             flag: '🇯🇵', 
-            businesses: ['Tokyo Fitness Gym', 'Sakura Ramen House', 'Beauty Spa Osaka', 'Japan Tours Agency', 'Matcha Tea House', 'Smoothie Bar Kyoto', 'Hair Salon Shibuya', 'Zen Wellness Center', 'Sushi Paradise', 'Yokohama Restaurant', 'Nagoya Fitness Club', 'Fukuoka Cafe'],
-            names: ['Haruto', 'Yuto', 'Sota', 'Yuki', 'Hayato', 'Haruki', 'Ryota', 'Kota', 'Kaito', 'Yui', 'Rio', 'Koharu', 'Hina', 'Himari', 'Mei', 'Miyu', 'Sakura', 'Aoi', 'Yuna', 'Ren', 'Takumi', 'Shota', 'Riku', 'Akari', 'Mio', 'Saki', 'Rina', 'Nanami', 'Honoka', 'Asahi', 'Minato', 'Yusei', 'Daiki', 'Kento', 'Ayaka', 'Misaki', 'Kanon', 'Shiori', 'Riko', 'Yuzuki']
+            maleBusinesses: ['Tokyo Fitness Gym', 'Auto Repair Osaka', 'Tech Solutions Tokyo', 'Construction Kyoto', 'Sports Shop Shibuya', 'Barber Shop Ginza', 'Hardware Store Tokyo', 'Car Wash Yokohama', 'Security Services Japan', 'Plumbing Pro Tokyo'],
+            femaleBusinesses: ['Beauty Spa Shibuya', 'Nail Salon Harajuku', 'Bridal Shop Tokyo', 'Flower Boutique Ginza', 'Yoga Studio Osaka', 'Skincare Clinic Tokyo', 'Fashion Boutique Shibuya', 'Cake Shop Kyoto', 'Jewelry Store Ginza', 'Relaxation Spa Tokyo'],
+            maleNames: ['Haruto', 'Yuto', 'Sota', 'Hayato', 'Haruki', 'Ryota', 'Kota', 'Kaito', 'Ren', 'Takumi', 'Shota', 'Riku', 'Asahi', 'Minato', 'Yusei', 'Daiki', 'Kento', 'Yuma', 'Hiroto', 'Kenji'],
+            femaleNames: ['Yui', 'Rio', 'Koharu', 'Hina', 'Himari', 'Mei', 'Miyu', 'Sakura', 'Aoi', 'Yuna', 'Akari', 'Mio', 'Saki', 'Rina', 'Nanami', 'Honoka', 'Ayaka', 'Misaki', 'Kanon', 'Shiori']
         },
         { 
             name: 'India', 
             flag: '🇮🇳', 
-            businesses: ['Fit India Gym Mumbai', 'Taj Mahal Restaurant', 'Beauty Parlor Delhi', 'Incredible India Tours', 'Chai Wala Cafe', 'Fresh Juice Corner', 'Hair Salon Bangalore', 'Ayurveda Wellness Spa', 'Spice Garden Restaurant', 'Chennai Fitness Club', 'Kolkata Bistro', 'Hyderabad Cafe'],
-            names: ['Aarav', 'Vivaan', 'Aditya', 'Vihaan', 'Arjun', 'Sai', 'Reyansh', 'Ayaan', 'Krishna', 'Aadhya', 'Ananya', 'Diya', 'Saanvi', 'Aanya', 'Isha', 'Kavya', 'Riya', 'Pooja', 'Rohan', 'Rahul', 'Amit', 'Vikram', 'Neha', 'Shreya', 'Deepika', 'Anjali', 'Meera', 'Nisha', 'Pranav', 'Karthik', 'Siddharth', 'Varun', 'Nikhil', 'Tanvi', 'Ishita', 'Kritika', 'Aditi', 'Simran', 'Nikita', 'Divya']
+            maleBusinesses: ['Fit India Gym Mumbai', 'Auto Works Delhi', 'Tech Hub Bangalore', 'Builders Chennai', 'Sports Zone Hyderabad', 'Royal Barber Shop', 'Hardware Mart', 'Shine Car Wash', 'Secure India Services', 'Plumbing Solutions Delhi'],
+            femaleBusinesses: ['Beauty Parlor Delhi', 'Nail Art Mumbai', 'Bridal Studio Bangalore', 'Flower Decor Shop', 'Yoga Shala Chennai', 'Skin Care Clinic Mumbai', 'Fashion Boutique Delhi', 'Sweet Treats Bakery', 'Gold Jewellery Store', 'Ayurveda Spa Kerala'],
+            maleNames: ['Aarav', 'Vivaan', 'Aditya', 'Vihaan', 'Arjun', 'Sai', 'Reyansh', 'Ayaan', 'Krishna', 'Rohan', 'Rahul', 'Amit', 'Vikram', 'Pranav', 'Karthik', 'Siddharth', 'Varun', 'Nikhil', 'Rajesh', 'Suresh'],
+            femaleNames: ['Aadhya', 'Ananya', 'Diya', 'Saanvi', 'Aanya', 'Isha', 'Kavya', 'Riya', 'Pooja', 'Neha', 'Shreya', 'Deepika', 'Anjali', 'Meera', 'Nisha', 'Tanvi', 'Ishita', 'Kritika', 'Aditi', 'Simran']
         },
         { 
             name: 'Brazil', 
             flag: '🇧🇷', 
-            businesses: ['Rio Fitness Gym', 'Churrascaria Gaúcha', 'Salão de Beleza Rio', 'Brasil Travel Agency', 'Açaí Corner Cafe', 'Suco Natural Bar', 'Cabelo Studio São Paulo', 'Copacabana Wellness Spa', 'Feijoada House', 'Salvador Restaurant', 'Brasilia Fitness', 'Recife Bistro'],
-            names: ['Miguel', 'Arthur', 'Heitor', 'Bernardo', 'Davi', 'Gabriel', 'Pedro', 'Samuel', 'Lucas', 'Maria', 'Alice', 'Sophia', 'Laura', 'Isabella', 'Manuela', 'Júlia', 'Helena', 'Valentina', 'Heloísa', 'Matheus', 'Rafael', 'Gustavo', 'Felipe', 'Ana', 'Beatriz', 'Mariana', 'Giovanna', 'Letícia', 'Larissa', 'Thiago', 'Bruno', 'Leonardo', 'Enzo', 'João', 'Camila', 'Carolina', 'Fernanda', 'Gabriela', 'Juliana', 'Natália']
+            maleBusinesses: ['Rio Fitness Academia', 'Auto Center São Paulo', 'Tech Solutions Brasil', 'Construtora Rio', 'Loja de Esportes', 'Barbearia Clássica', 'Loja de Ferramentas', 'Lava Rápido Express', 'Segurança Patrimonial', 'Encanador Profissional'],
+            femaleBusinesses: ['Salão de Beleza Rio', 'Nail Designer São Paulo', 'Boutique de Noivas', 'Floricultura Bela', 'Estúdio de Yoga', 'Clínica Estética', 'Boutique de Moda', 'Confeitaria Doce', 'Joalheria Elegante', 'Spa Relaxante'],
+            maleNames: ['Miguel', 'Arthur', 'Heitor', 'Bernardo', 'Davi', 'Gabriel', 'Pedro', 'Samuel', 'Lucas', 'Matheus', 'Rafael', 'Gustavo', 'Felipe', 'Thiago', 'Bruno', 'Leonardo', 'Enzo', 'João', 'Carlos', 'Ricardo'],
+            femaleNames: ['Maria', 'Alice', 'Sophia', 'Laura', 'Isabella', 'Manuela', 'Júlia', 'Helena', 'Valentina', 'Heloísa', 'Ana', 'Beatriz', 'Mariana', 'Giovanna', 'Letícia', 'Larissa', 'Camila', 'Carolina', 'Fernanda', 'Gabriela']
         },
         { 
             name: 'UAE', 
             flag: '🇦🇪', 
-            businesses: ['Dubai Fitness Gym', 'Al Majlis Restaurant', 'Luxury Beauty Salon Dubai', 'Emirates Travel Agency', 'Arabic Coffee House', 'Fresh Juice Bar Abu Dhabi', 'Hair Studio Marina', 'Burj Wellness Spa', 'Desert Rose Cafe', 'Sharjah Restaurant', 'Ajman Fitness Club', 'Ras Al Khaimah Bistro'],
-            names: ['Mohammed', 'Ahmed', 'Rashid', 'Khalid', 'Sultan', 'Saeed', 'Omar', 'Hamad', 'Abdullah', 'Fatima', 'Mariam', 'Aisha', 'Noura', 'Hessa', 'Latifa', 'Shamsa', 'Maitha', 'Reem', 'Sara', 'Majid', 'Faisal', 'Zayed', 'Mansoor', 'Maryam', 'Amna', 'Shamma', 'Mouza', 'Khawla', 'Hind', 'Yousuf', 'Ali', 'Hassan', 'Ibrahim', 'Nasser', 'Layla', 'Dana', 'Sheikha', 'Alia', 'Manal', 'Hala']
+            maleBusinesses: ['Dubai Fitness Club', 'Auto Service Dubai', 'Tech Hub Abu Dhabi', 'Construction Emirates', 'Sports World Dubai', 'Gentlemen Barber Dubai', 'Hardware Mart UAE', 'Premium Car Wash', 'Emirates Security', 'Plumbing Services Dubai'],
+            femaleBusinesses: ['Luxury Beauty Salon Dubai', 'Nail Spa Marina', 'Bridal Boutique Abu Dhabi', 'Flower Shop Emirates', 'Yoga Studio Dubai', 'Skin Clinic Dubai', 'Fashion House Dubai', 'Cake Design Studio', 'Gold Souk Jewellers', 'Royal Spa Dubai'],
+            maleNames: ['Mohammed', 'Ahmed', 'Rashid', 'Khalid', 'Sultan', 'Saeed', 'Omar', 'Hamad', 'Abdullah', 'Majid', 'Faisal', 'Zayed', 'Mansoor', 'Yousuf', 'Ali', 'Hassan', 'Ibrahim', 'Nasser', 'Tariq', 'Waleed'],
+            femaleNames: ['Fatima', 'Mariam', 'Aisha', 'Noura', 'Hessa', 'Latifa', 'Shamsa', 'Maitha', 'Reem', 'Sara', 'Maryam', 'Amna', 'Shamma', 'Mouza', 'Khawla', 'Hind', 'Layla', 'Dana', 'Sheikha', 'Alia']
         },
         { 
             name: 'Pakistan', 
             flag: '🇵🇰', 
-            businesses: ['Karachi Fitness Club', 'Lahore Biryani House', 'Beauty Parlor Islamabad', 'Pakistan Tours Agency', 'Chai Khana Lahore', 'Fresh Juice Corner Karachi', 'Hair Salon Multan', 'Rawalpindi Wellness Center', 'Peshawar Kabab House', 'Faisalabad Restaurant', 'Quetta Fitness Gym', 'Sialkot Cafe'],
-            names: ['Hamza', 'Bilal', 'Usman', 'Zain', 'Saad', 'Ahsan', 'Fahad', 'Imran', 'Tariq', 'Ayesha', 'Sana', 'Hira', 'Maryam', 'Zara', 'Khadija', 'Amina', 'Bushra', 'Nadia', 'Rabia', 'Hassan', 'Hussain', 'Arslan', 'Danish', 'Asma', 'Mehwish', 'Sadia', 'Noor', 'Nimra', 'Ahmed', 'Ali', 'Waqar', 'Kamran', 'Adnan', 'Farah', 'Saima', 'Uzma', 'Sidra', 'Iqra', 'Madiha', 'Anam']
+            maleBusinesses: ['Karachi Fitness Club', 'Auto Workshop Lahore', 'Tech Solutions Islamabad', 'Builders Rawalpindi', 'Sports Corner Karachi', 'Gents Salon Lahore', 'Hardware Store Multan', 'Car Wash Faisalabad', 'Security Services Pakistan', 'Plumber Services Lahore'],
+            femaleBusinesses: ['Beauty Parlor Lahore', 'Nail Art Karachi', 'Bridal Studio Islamabad', 'Flower Shop Lahore', 'Yoga Center Karachi', 'Skin Care Clinic Lahore', 'Fashion Boutique Karachi', 'Cake Shop Islamabad', 'Jewellery Store Lahore', 'Ladies Spa Karachi'],
+            maleNames: ['Hamza', 'Bilal', 'Usman', 'Zain', 'Saad', 'Ahsan', 'Fahad', 'Imran', 'Tariq', 'Hassan', 'Hussain', 'Arslan', 'Danish', 'Ahmed', 'Ali', 'Waqar', 'Kamran', 'Adnan', 'Faisal', 'Umar'],
+            femaleNames: ['Ayesha', 'Sana', 'Hira', 'Maryam', 'Zara', 'Khadija', 'Amina', 'Bushra', 'Nadia', 'Rabia', 'Asma', 'Mehwish', 'Sadia', 'Noor', 'Nimra', 'Farah', 'Saima', 'Uzma', 'Sidra', 'Iqra']
         },
         { 
             name: 'Singapore', 
             flag: '🇸🇬', 
-            businesses: ['Singapore Fitness Hub', 'Hawker Paradise Restaurant', 'Orchard Beauty Salon', 'Lion City Travel Agency', 'Kopitiam Traditional Cafe', 'Marina Juice Bar', 'Hair Studio Raffles', 'Sentosa Wellness Spa', 'Little India Bistro', 'Chinatown Restaurant', 'Bugis Fitness Club', 'Clarke Quay Cafe'],
-            names: ['Wei Jie', 'Jun Wei', 'Zhi Wei', 'Jia Hao', 'Yi Xuan', 'Zi Hao', 'Jia Jun', 'Wei Liang', 'Xin Yi', 'Xin Hui', 'Jia Yi', 'Hui Ling', 'Xin Ying', 'Jia Xin', 'Yi Ling', 'Hui Min', 'Jia Hui', 'Xin Yee', 'Zi Xuan', 'Ming Wei', 'Kai Xiang', 'Zhi Hao', 'Jun Jie', 'Mei Ling', 'Shu Ting', 'Li Ying', 'Hui Xin', 'Jing Yi', 'Wen Xin', 'Yu Xuan', 'Rui En', 'Yi Jun', 'Hao Wei', 'Shi Jie', 'Pei Xuan', 'Xiao Hui', 'Ying Xin', 'Wen Hui', 'Yu Ting', 'Jing Wen']
+            maleBusinesses: ['Singapore Fitness Hub', 'Auto Service Orchard', 'Tech Solutions SG', 'Construction Pte Ltd', 'Sports Mart Singapore', 'Classic Barber Raffles', 'Hardware Centre', 'Express Car Grooming', 'Secure Guard SG', 'Plumbing Works SG'],
+            femaleBusinesses: ['Orchard Beauty Salon', 'Nail Spa Marina Bay', 'Bridal Boutique SG', 'Flower Studio Singapore', 'Yoga Space Orchard', 'Skin Clinic SG', 'Fashion Gallery', 'Patisserie Café', 'Jewellery Boutique', 'Serenity Spa Singapore'],
+            maleNames: ['Wei Jie', 'Jun Wei', 'Zhi Wei', 'Jia Hao', 'Zi Hao', 'Jia Jun', 'Wei Liang', 'Ming Wei', 'Kai Xiang', 'Zhi Hao', 'Jun Jie', 'Yu Xuan', 'Yi Jun', 'Hao Wei', 'Shi Jie', 'Wei Ming', 'Jun Hao', 'Zhi Xuan', 'Jian Wei', 'Kai Ming'],
+            femaleNames: ['Xin Yi', 'Xin Hui', 'Jia Yi', 'Hui Ling', 'Xin Ying', 'Jia Xin', 'Yi Ling', 'Hui Min', 'Jia Hui', 'Xin Yee', 'Zi Xuan', 'Mei Ling', 'Shu Ting', 'Li Ying', 'Hui Xin', 'Jing Yi', 'Wen Xin', 'Pei Xuan', 'Xiao Hui', 'Yu Ting']
         },
         { 
             name: 'Saudi Arabia', 
             flag: '🇸🇦', 
-            businesses: ['Riyadh Fitness Center', 'Al Baik Restaurant', 'Jeddah Beauty Lounge', 'Saudi Travel Agency', 'Arabic Coffee Majlis', 'Fresh Juice Bar Riyadh', 'Hair Salon Dammam', 'Makkah Wellness Spa', 'Kabsa House Restaurant', 'Medina Cafe', 'Taif Fitness Club', 'Khobar Bistro'],
-            names: ['Mohammed', 'Abdullah', 'Abdulrahman', 'Faisal', 'Khalid', 'Salman', 'Saud', 'Turki', 'Nasser', 'Nora', 'Sara', 'Lama', 'Hala', 'Reem', 'Asma', 'Maha', 'Nouf', 'Dalal', 'Haifa', 'Sultan', 'Bandar', 'Fahad', 'Nawaf', 'Fatima', 'Aisha', 'Mariam', 'Jawaher', 'Abeer', 'Wafa', 'Abdulaziz', 'Omar', 'Ali', 'Ahmad', 'Youssef', 'Arwa', 'Ghada', 'Lamia', 'Mashael', 'Shahad', 'Razan']
+            maleBusinesses: ['Riyadh Fitness Center', 'Auto Service Jeddah', 'Tech Hub Riyadh', 'Saudi Builders Co', 'Sports Store Dammam', 'Royal Barber Riyadh', 'Hardware Mart Jeddah', 'Premium Car Care', 'Security Solutions KSA', 'Plumbing Services Riyadh'],
+            femaleBusinesses: ['Jeddah Beauty Lounge', 'Nail Studio Riyadh', 'Bridal House Jeddah', 'Flower Boutique Riyadh', 'Ladies Yoga Studio', 'Skin Care Center Jeddah', 'Fashion Boutique Riyadh', 'Cake Creations', 'Gold Jewellery Jeddah', 'Ladies Spa Riyadh'],
+            maleNames: ['Mohammed', 'Abdullah', 'Abdulrahman', 'Faisal', 'Khalid', 'Salman', 'Saud', 'Turki', 'Nasser', 'Sultan', 'Bandar', 'Fahad', 'Nawaf', 'Abdulaziz', 'Omar', 'Ali', 'Ahmad', 'Youssef', 'Hamad', 'Waleed'],
+            femaleNames: ['Nora', 'Sara', 'Lama', 'Hala', 'Reem', 'Asma', 'Maha', 'Nouf', 'Dalal', 'Haifa', 'Fatima', 'Aisha', 'Mariam', 'Jawaher', 'Abeer', 'Wafa', 'Arwa', 'Ghada', 'Lamia', 'Mashael']
         },
         { 
             name: 'South Africa', 
             flag: '🇿🇦', 
-            businesses: ['Cape Town Fitness Gym', 'Braai House Restaurant', 'Johannesburg Beauty Salon', 'Safari Travel Agency', 'Rooibos Tea Cafe', 'Fresh Juice Bar Durban', 'Hair Salon Pretoria', 'Table Mountain Wellness Spa', 'Ubuntu Bistro', 'Soweto Restaurant', 'Port Elizabeth Fitness', 'Bloemfontein Cafe'],
-            names: ['Liam', 'Ethan', 'Sipho', 'Thabo', 'Johan', 'Pieter', 'Andile', 'Bongani', 'Kagiso', 'Lerato', 'Naledi', 'Thandiwe', 'Zanele', 'Nomvula', 'Emma', 'Mia', 'Chloe', 'Sarah', 'Jessica', 'David', 'Michael', 'Tshepo', 'Mandla', 'Palesa', 'Lindiwe', 'Ayanda', 'Precious', 'Grace', 'Hope', 'Willem', 'Johannes', 'Sibusiso', 'Themba', 'Neo', 'Khanyi', 'Mbali', 'Nandi', 'Zinhle', 'Thandi', 'Nokuthula']
+            maleBusinesses: ['Cape Town Fitness Gym', 'Auto Workshop Joburg', 'Tech Solutions SA', 'Builders Pretoria', 'Sports Outlet Durban', 'Gents Barber Shop', 'Hardware Warehouse', 'Car Valet Services', 'Secure Guard SA', 'Plumbing Experts SA'],
+            femaleBusinesses: ['Johannesburg Beauty Salon', 'Nail Bar Cape Town', 'Bridal Studio Durban', 'Flower Shop Pretoria', 'Yoga Wellness Studio', 'Skin Therapy Clinic', 'Fashion Boutique Joburg', 'Bakery Delights', 'Jewellery Emporium', 'Day Spa Cape Town'],
+            maleNames: ['Liam', 'Ethan', 'Sipho', 'Thabo', 'Johan', 'Pieter', 'Andile', 'Bongani', 'Kagiso', 'David', 'Michael', 'Tshepo', 'Mandla', 'Willem', 'Johannes', 'Sibusiso', 'Themba', 'Neo', 'Dean', 'Craig'],
+            femaleNames: ['Lerato', 'Naledi', 'Thandiwe', 'Zanele', 'Nomvula', 'Emma', 'Mia', 'Chloe', 'Sarah', 'Jessica', 'Palesa', 'Lindiwe', 'Ayanda', 'Precious', 'Grace', 'Hope', 'Khanyi', 'Mbali', 'Nandi', 'Zinhle']
         },
         { 
             name: 'Italy', 
             flag: '🇮🇹', 
-            businesses: ['Roma Fitness Gym', 'Trattoria Milano', 'Salone di Bellezza Venezia', 'Italia Travel Agency', 'Caffè Napoli', 'Succo Fresco Bar', 'Parrucchiere Firenze', 'Toscana Wellness Spa', 'Pizzeria Bella Italia', 'Bologna Restaurant', 'Torino Fitness Club', 'Palermo Cafe'],
-            names: ['Francesco', 'Leonardo', 'Alessandro', 'Lorenzo', 'Matteo', 'Andrea', 'Gabriele', 'Riccardo', 'Tommaso', 'Sofia', 'Aurora', 'Giulia', 'Ginevra', 'Alice', 'Emma', 'Giorgia', 'Greta', 'Beatrice', 'Anna', 'Marco', 'Luca', 'Giuseppe', 'Antonio', 'Chiara', 'Martina', 'Sara', 'Francesca', 'Valentina', 'Alessia', 'Davide', 'Federico', 'Simone', 'Filippo', 'Edoardo', 'Elena', 'Elisa', 'Federica', 'Silvia', 'Roberta', 'Claudia']
+            maleBusinesses: ['Roma Fitness Club', 'Auto Officina Milano', 'Tech Solutions Italia', 'Costruzioni Roma', 'Sport Shop Napoli', 'Barbiere Classico', 'Ferramenta Store', 'Autolavaggio Express', 'Sicurezza Servizi', 'Idraulico Professionista'],
+            femaleBusinesses: ['Salone di Bellezza Milano', 'Nail Art Roma', 'Boutique Sposa Venezia', 'Fiorista Elegante', 'Yoga Studio Firenze', 'Clinica Estetica Roma', 'Moda Boutique Milano', 'Pasticceria Dolce', 'Gioielleria Preziosa', 'Centro Benessere Toscana'],
+            maleNames: ['Francesco', 'Leonardo', 'Alessandro', 'Lorenzo', 'Matteo', 'Andrea', 'Gabriele', 'Riccardo', 'Tommaso', 'Marco', 'Luca', 'Giuseppe', 'Antonio', 'Davide', 'Federico', 'Simone', 'Filippo', 'Edoardo', 'Nicola', 'Stefano'],
+            femaleNames: ['Sofia', 'Aurora', 'Giulia', 'Ginevra', 'Alice', 'Emma', 'Giorgia', 'Greta', 'Beatrice', 'Anna', 'Chiara', 'Martina', 'Sara', 'Francesca', 'Valentina', 'Alessia', 'Elena', 'Elisa', 'Federica', 'Silvia']
+        },
+        { 
+            name: 'Turkey', 
+            flag: '🇹🇷', 
+            maleBusinesses: ['Istanbul Fitness Gym', 'Oto Servis Ankara', 'Teknoloji Çözümleri', 'İnşaat Şirketi', 'Spor Mağazası', 'Erkek Kuaförü', 'Hırdavat Dükkanı', 'Oto Yıkama', 'Güvenlik Hizmetleri', 'Tesisatçı Usta'],
+            femaleBusinesses: ['Güzellik Salonu Istanbul', 'Nail Art Ankara', 'Gelinlik Butik', 'Çiçekçi Dükkanı', 'Yoga Stüdyosu', 'Cilt Bakım Kliniği', 'Moda Butik', 'Pasta Dükkanı', 'Kuyumcu', 'Spa Merkezi'],
+            maleNames: ['Mehmet', 'Mustafa', 'Ahmet', 'Ali', 'Hüseyin', 'Hasan', 'İbrahim', 'Murat', 'Osman', 'Yusuf', 'Emre', 'Burak', 'Cem', 'Serkan', 'Tolga', 'Kaan', 'Berk', 'Onur', 'Deniz', 'Can'],
+            femaleNames: ['Fatma', 'Ayşe', 'Emine', 'Hatice', 'Zeynep', 'Elif', 'Merve', 'Esra', 'Büşra', 'Seda', 'Derya', 'Gül', 'Özge', 'Pınar', 'Aslı', 'Burcu', 'Ceren', 'Dilara', 'Ebru', 'Gamze']
+        },
+        { 
+            name: 'Indonesia', 
+            flag: '🇮🇩', 
+            maleBusinesses: ['Jakarta Fitness Center', 'Bengkel Mobil Surabaya', 'Solusi Teknologi', 'Kontraktor Bangunan', 'Toko Olahraga', 'Barbershop Klasik', 'Toko Bangunan', 'Cuci Mobil Express', 'Jasa Keamanan', 'Tukang Ledeng'],
+            femaleBusinesses: ['Salon Kecantikan Jakarta', 'Nail Art Bali', 'Butik Pengantin', 'Toko Bunga', 'Studio Yoga', 'Klinik Perawatan Kulit', 'Butik Fashion', 'Toko Kue', 'Toko Perhiasan', 'Spa Relaksasi'],
+            maleNames: ['Budi', 'Andi', 'Dedi', 'Eko', 'Agus', 'Hendra', 'Rizki', 'Fajar', 'Dimas', 'Arif', 'Bayu', 'Cahyo', 'Dwi', 'Feri', 'Gilang', 'Hendri', 'Irwan', 'Joko', 'Kevin', 'Lukman'],
+            femaleNames: ['Siti', 'Sri', 'Dewi', 'Ani', 'Rina', 'Wati', 'Yuni', 'Ratna', 'Indah', 'Maya', 'Putri', 'Dian', 'Eka', 'Fitri', 'Gita', 'Hani', 'Intan', 'Kartika', 'Lina', 'Mega']
+        },
+        { 
+            name: 'Malaysia', 
+            flag: '🇲🇾', 
+            maleBusinesses: ['KL Fitness Centre', 'Auto Workshop Penang', 'Tech Solutions Malaysia', 'Construction Sdn Bhd', 'Sports Outlet KL', 'Barbershop Kuala Lumpur', 'Hardware Store Johor', 'Car Wash Selangor', 'Security Services MY', 'Plumbing Works KL'],
+            femaleBusinesses: ['Beauty Salon Kuala Lumpur', 'Nail Spa Penang', 'Bridal Boutique KL', 'Florist Shop Johor', 'Yoga Studio Malaysia', 'Skin Care Clinic KL', 'Fashion Boutique Penang', 'Bakery & Cakes', 'Jewellery Store KL', 'Spa Wellness Centre'],
+            maleNames: ['Ahmad', 'Mohamed', 'Ali', 'Hafiz', 'Faiz', 'Haziq', 'Amir', 'Irfan', 'Danial', 'Ariff', 'Wei Liang', 'Jun Kit', 'Zhi Yang', 'Kai Wen', 'Raj', 'Kumar', 'Anand', 'Vikram', 'Suresh', 'Ramesh'],
+            femaleNames: ['Nur', 'Siti', 'Aisyah', 'Fatimah', 'Sarah', 'Nurul', 'Aisha', 'Farah', 'Liyana', 'Amira', 'Mei Ling', 'Xin Yi', 'Hui Min', 'Jia Xin', 'Priya', 'Lakshmi', 'Kavitha', 'Shanti', 'Deepa', 'Anita']
+        },
+        { 
+            name: 'Philippines', 
+            flag: '🇵🇭', 
+            maleBusinesses: ['Manila Fitness Gym', 'Auto Repair Cebu', 'Tech Solutions Manila', 'Construction Company PH', 'Sports Shop Davao', 'Barbershop Manila', 'Hardware Store Quezon', 'Car Wash Express PH', 'Security Agency PH', 'Plumbing Services Manila'],
+            femaleBusinesses: ['Beauty Salon Manila', 'Nail Spa Cebu', 'Bridal Shop Makati', 'Flower Shop Quezon', 'Yoga Studio BGC', 'Skin Care Clinic Manila', 'Fashion Boutique Makati', 'Cake Shop Davao', 'Jewelry Store Manila', 'Spa Wellness Cebu'],
+            maleNames: ['Juan', 'Jose', 'Miguel', 'Antonio', 'Carlo', 'Marco', 'Paolo', 'Rafael', 'Gabriel', 'Angelo', 'Jayson', 'Mark', 'John', 'Michael', 'Kevin', 'Bryan', 'Christian', 'Daniel', 'Francis', 'Patrick'],
+            femaleNames: ['Maria', 'Ana', 'Rosa', 'Carmen', 'Sofia', 'Isabella', 'Angela', 'Patricia', 'Jessica', 'Nicole', 'Michelle', 'Stephanie', 'Christine', 'Jennifer', 'Katherine', 'Angelica', 'Maricel', 'Jocelyn', 'Rosalie', 'Grace']
         }
     ];
 
@@ -762,17 +824,35 @@ function initializeToastNotifications() {
     function generateNotificationQueue() {
         const allCombinations = [];
         
-        // Generate all possible unique combinations
+        // Generate all possible unique combinations with gender matching
         countries.forEach(country => {
-            country.names.forEach(name => {
-                country.businesses.forEach(business => {
+            // Male combinations
+            country.maleNames.forEach(name => {
+                country.maleBusinesses.forEach(business => {
                     services.forEach(service => {
                         allCombinations.push({
                             flag: country.flag,
                             name: name,
                             business: business,
                             service: service,
-                            country: country.name
+                            country: country.name,
+                            gender: 'male'
+                        });
+                    });
+                });
+            });
+            
+            // Female combinations
+            country.femaleNames.forEach(name => {
+                country.femaleBusinesses.forEach(business => {
+                    services.forEach(service => {
+                        allCombinations.push({
+                            flag: country.flag,
+                            name: name,
+                            business: business,
+                            service: service,
+                            country: country.name,
+                            gender: 'female'
                         });
                     });
                 });
