@@ -2042,3 +2042,7 @@ background: linear-gradient(to right, #4B32A1 0%, #9B308E 40%, #E63E36 75%, #F58
 .custom-toast {
     border-radius: 8px !important;
 }
+ a{
+            color: var(--primary-color);
+            text-decoration: none !important;
+        }
