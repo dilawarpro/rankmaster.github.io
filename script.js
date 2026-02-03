@@ -1101,9 +1101,25 @@ window.addEventListener('resize', handleResponsive);
 // ========================================
 
 window.addEventListener('load', function () {
-    // All resources loaded
+    // Hide preloader when page fully loads
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.display = 'none';
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+    }
     console.log('All resources loaded');
 });
+
+// Fallback: Hide preloader after 3 seconds if not hidden already
+setTimeout(function() {
+    const preloader = document.getElementById('preloader');
+    if (preloader && preloader.style.display !== 'none') {
+        preloader.style.display = 'none';
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+    }
+}, 3000);
 
 // ========================================
 // KEYBOARD SHORTCUTS
