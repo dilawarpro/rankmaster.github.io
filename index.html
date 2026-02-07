@@ -31,8 +31,10 @@
     <link rel="shortcut icon" href="img/brandliox.jpg" type="image/x-icon">
     <title>Brandliox - Website Development & Digital Marketing Solutions | #1 Google Ranking</title>
 
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     
     <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -172,6 +174,943 @@
     </div>
 </div>
 <!-- Preloader ended -->
+ <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --primary-light: #eef2ff;
+      --accent: #06b6d4;
+      --dark: #0f172a;
+      --dark-secondary: #1e293b;
+      --gray: #64748b;
+      --gray-light: #94a3b8;
+      --light-bg: #f8fafc;
+      --white: #ffffff;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --orange: #f97316;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+    }
+
+    /* ===========================
+       TRUST SECTION
+    =========================== */
+    .branliox-trust {
+      background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%);
+      padding: 100px 0 90px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative blobs */
+    .branliox-trust::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.04) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .branliox-trust::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.04) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    /* ---- Top Badge ---- */
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 8px 22px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(79, 70, 229, 0.1);
+    }
+
+    .trust-pill i {
+      font-size: 0.95rem;
+    }
+
+    /* ---- Heading ---- */
+    .trust-heading {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .trust-heading .highlight {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .trust-sub {
+      color: var(--gray);
+      font-size: 1.08rem;
+      max-width: 580px;
+      margin: 0 auto 55px;
+      line-height: 1.75;
+    }
+
+    .trust-sub strong {
+      color: var(--dark-secondary);
+    }
+
+    /* ===========================
+       STATS CARDS
+    =========================== */
+    .stat-box {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 32px 22px;
+      text-align: center;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-box::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 10px;
+      transition: width 0.35s ease;
+    }
+
+    .stat-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(79, 70, 229, 0.1);
+      border-color: rgba(79, 70, 229, 0.12);
+    }
+
+    .stat-box:hover::after {
+      width: 50px;
+    }
+
+    .stat-box .icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .stat-box .icon-wrap.ic-purple { background: #eef2ff; color: #4f46e5; }
+    .stat-box .icon-wrap.ic-cyan   { background: #ecfeff; color: #06b6d4; }
+    .stat-box .icon-wrap.ic-green  { background: #ecfdf5; color: #10b981; }
+    .stat-box .icon-wrap.ic-amber  { background: #fffbeb; color: #f59e0b; }
+
+    .stat-box .number {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .stat-box .label {
+      font-size: 0.88rem;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    /* ===========================
+       CLIENT LOGO MARQUEE
+    =========================== */
+    .logos-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gray-light);
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-bottom: 28px;
+      margin-top: 60px;
+    }
+
+    .marquee-wrap {
+      overflow: hidden;
+      position: relative;
+      padding: 18px 0;
+    }
+
+    .marquee-wrap::before,
+    .marquee-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 140px;
+      height: 100%;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .marquee-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, var(--light-bg), transparent);
+    }
+
+    .marquee-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, var(--light-bg), transparent);
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .client-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      padding: 10px 22px;
+      border-radius: 12px;
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      opacity: 0.55;
+      filter: grayscale(80%);
+      transition: all 0.3s ease;
+    }
+
+    .client-logo:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      border-color: rgba(79, 70, 229, 0.15);
+    }
+
+    .client-logo .cl-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .client-logo .cl-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--dark-secondary);
+      white-space: nowrap;
+    }
+
+    .client-logo .cl-type {
+      font-size: 0.7rem;
+      color: var(--gray-light);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* ===========================
+       INDUSTRY TAGS
+    =========================== */
+    .industry-section {
+      margin-top: 55px;
+      margin-bottom: 55px;
+    }
+
+    .industry-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+
+    .industry-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .industry-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--dark-secondary);
+      background: var(--white);
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      transition: all 0.3s ease;
+    }
+
+    .industry-tag:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .industry-tag i {
+      font-size: 0.9rem;
+    }
+
+    /* ===========================
+       TESTIMONIALS
+    =========================== */
+    .review-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px 28px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      transition: all 0.35s ease;
+      height: 100%;
+      position: relative;
+    }
+
+    .review-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 18px;
+      right: 24px;
+      font-size: 3.5rem;
+      color: rgba(79, 70, 229, 0.07);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .review-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    }
+
+    .review-card .stars {
+      color: var(--warning);
+      font-size: 0.82rem;
+      margin-bottom: 14px;
+      display: flex;
+      gap: 2px;
+    }
+
+    .review-card .result-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #ecfdf5;
+      color: #059669;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .review-card .review-text {
+      font-size: 0.93rem;
+      color: var(--gray);
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+
+    .review-card .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-card .reviewer .avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .review-card .reviewer .info .name {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--dark);
+    }
+
+    .review-card .reviewer .info .role {
+      font-size: 0.78rem;
+      color: var(--gray-light);
+    }
+
+    .review-card .reviewer .info .role i {
+      font-size: 0.65rem;
+      margin-right: 2px;
+    }
+
+    .review-card .service-tag {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    /* ===========================
+       BOTTOM CTA STRIP
+    =========================== */
+    .trust-bottom {
+      margin-top: 60px;
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark-secondary) 100%);
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 25px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .trust-bottom::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(79, 70, 229, 0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .trust-bottom::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      left: 30%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .trust-bottom-left {
+      position: relative;
+      z-index: 2;
+    }
+
+    .trust-bottom-left .avatars-stack {
+      display: flex;
+      margin-bottom: 14px;
+    }
+
+    .trust-bottom-left .avatars-stack .av {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 2.5px solid var(--dark);
+      margin-left: -10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.65rem;
+      color: white;
+    }
+
+    .trust-bottom-left .avatars-stack .av:first-child {
+      margin-left: 0;
+    }
+
+    .trust-bottom-left .avatars-stack .av-more {
+      background: var(--primary);
+      font-size: 0.6rem;
+    }
+
+    .trust-bottom-left h4 {
+      color: var(--white);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .trust-bottom-left p {
+      color: var(--gray-light);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .trust-bottom-left p .rating-val {
+      color: var(--warning);
+      font-weight: 700;
+    }
+
+    .trust-bottom-right {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-branliox {
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-branliox.primary {
+      background: linear-gradient(135deg, var(--primary), #6366f1);
+      color: var(--white);
+      box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+    }
+
+    .btn-branliox.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(79, 70, 229, 0.5);
+      color: var(--white);
+    }
+
+    .btn-branliox.outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-branliox.outline:hover {
+      border-color: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 991px) {
+      .trust-heading { font-size: 2rem; }
+      .trust-bottom { justify-content: center; text-align: center; }
+      .trust-bottom-left .avatars-stack { justify-content: center; }
+    }
+
+    @media (max-width: 767px) {
+      .branliox-trust { padding: 60px 0 50px; }
+      .trust-heading { font-size: 1.7rem; }
+      .trust-sub { font-size: 0.95rem; }
+      .stat-box { margin-bottom: 12px; }
+      .review-card { margin-bottom: 16px; }
+      .trust-bottom { padding: 28px 22px; }
+      .trust-bottom-right { width: 100%; justify-content: center; }
+    }
+  </style>
+  
+<!-- ===== BRANLIOX TRUST SECTION ===== -->
+<section class="branliox-trust">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="text-center">
+      <div class="trust-pill">
+        <i class="bi bi-patch-check-fill"></i>
+        Trusted Digital Marketing Partner
+      </div>
+      <h2 class="trust-heading">
+        Trusted by <span class="highlight">5,200+ Clients</span> Globally
+      </h2>
+      <p class="trust-sub">
+        From <strong>local businesses</strong> to <strong>growing brands</strong>, Branliox delivers
+        full-service digital marketing strategies that drive real, measurable results.
+      </p>
+    </div>
+
+    <!-- Stats -->
+    <div class="row g-3 justify-content-center">
+      <div class="col-6 col-lg-3">
+        <div class="stat-box">
+          <div class="icon-wrap ic-purple">
+            <i class="bi bi-people-fill"></i>
+          </div>
+          <div class="number">5.2K+</div>
+          <div class="label">Clients Served</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat-box">
+          <div class="icon-wrap ic-cyan">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <div class="number">12K+</div>
+          <div class="label">Campaigns Launched</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat-box">
+          <div class="icon-wrap ic-green">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+          <div class="number">45+</div>
+          <div class="label">Countries Reached</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="stat-box">
+          <div class="icon-wrap ic-amber">
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <div class="number">4.9/5</div>
+          <div class="label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Client Logos Marquee -->
+    <div class="text-center">
+      <p class="logos-label">Brands & businesses that chose Branliox</p>
+    </div>
+
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <!-- SET 1 -->
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#6366f1;"><i class="bi bi-cup-hot-fill"></i></div>
+          <div>
+            <div class="cl-name">BrewNest Café</div>
+            <div class="cl-type">Local Coffee Chain</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#0891b2;"><i class="bi bi-building"></i></div>
+          <div>
+            <div class="cl-name">Vertex Realty</div>
+            <div class="cl-type">Real Estate Agency</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#059669;"><i class="bi bi-heart-pulse-fill"></i></div>
+          <div>
+            <div class="cl-name">PureVita Wellness</div>
+            <div class="cl-type">Health & Wellness</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#d946ef;"><i class="bi bi-scissors"></i></div>
+          <div>
+            <div class="cl-name">Aura Salon Studio</div>
+            <div class="cl-type">Beauty Salon</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#ea580c;"><i class="bi bi-tools"></i></div>
+          <div>
+            <div class="cl-name">TradeForce Pro</div>
+            <div class="cl-type">Home Services</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#2563eb;"><i class="bi bi-mortarboard-fill"></i></div>
+          <div>
+            <div class="cl-name">SkillBridge Academy</div>
+            <div class="cl-type">Online Education</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#16a34a;"><i class="bi bi-shop"></i></div>
+          <div>
+            <div class="cl-name">FreshCart Market</div>
+            <div class="cl-type">Grocery E-Commerce</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#dc2626;"><i class="bi bi-hammer"></i></div>
+          <div>
+            <div class="cl-name">Apex Legal Group</div>
+            <div class="cl-type">Law Firm</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#7c3aed;"><i class="bi bi-controller"></i></div>
+          <div>
+            <div class="cl-name">PixelForge Games</div>
+            <div class="cl-type">Gaming Startup</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#0d9488;"><i class="bi bi-truck"></i></div>
+          <div>
+            <div class="cl-name">SwiftHaul Logistics</div>
+            <div class="cl-type">Logistics Company</div>
+          </div>
+        </div>
+
+        <!-- SET 2 (Duplicate for seamless loop) -->
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#6366f1;"><i class="bi bi-cup-hot-fill"></i></div>
+          <div>
+            <div class="cl-name">BrewNest Café</div>
+            <div class="cl-type">Local Coffee Chain</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#0891b2;"><i class="bi bi-building"></i></div>
+          <div>
+            <div class="cl-name">Vertex Realty</div>
+            <div class="cl-type">Real Estate Agency</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#059669;"><i class="bi bi-heart-pulse-fill"></i></div>
+          <div>
+            <div class="cl-name">PureVita Wellness</div>
+            <div class="cl-type">Health & Wellness</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#d946ef;"><i class="bi bi-scissors"></i></div>
+          <div>
+            <div class="cl-name">Aura Salon Studio</div>
+            <div class="cl-type">Beauty Salon</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#ea580c;"><i class="bi bi-tools"></i></div>
+          <div>
+            <div class="cl-name">TradeForce Pro</div>
+            <div class="cl-type">Home Services</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#2563eb;"><i class="bi bi-mortarboard-fill"></i></div>
+          <div>
+            <div class="cl-name">SkillBridge Academy</div>
+            <div class="cl-type">Online Education</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#16a34a;"><i class="bi bi-shop"></i></div>
+          <div>
+            <div class="cl-name">FreshCart Market</div>
+            <div class="cl-type">Grocery E-Commerce</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#dc2626;"><i class="bi bi-hammer"></i></div>
+          <div>
+            <div class="cl-name">Apex Legal Group</div>
+            <div class="cl-type">Law Firm</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#7c3aed;"><i class="bi bi-controller"></i></div>
+          <div>
+            <div class="cl-name">PixelForge Games</div>
+            <div class="cl-type">Gaming Startup</div>
+          </div>
+        </div>
+        <div class="client-logo">
+          <div class="cl-icon" style="background:#0d9488;"><i class="bi bi-truck"></i></div>
+          <div>
+            <div class="cl-name">SwiftHaul Logistics</div>
+            <div class="cl-type">Logistics Company</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Industry Tags -->
+    <div class="industry-section text-center">
+      <p class="industry-label">Industries we specialize in</p>
+      <div class="industry-tags">
+        <span class="industry-tag"><i class="bi bi-shop-window"></i> Local Business</span>
+        <span class="industry-tag"><i class="bi bi-house-door"></i> Real Estate</span>
+        <span class="industry-tag"><i class="bi bi-heart-pulse"></i> Healthcare</span>
+        <span class="industry-tag"><i class="bi bi-bag"></i> E-Commerce</span>
+        <span class="industry-tag"><i class="bi bi-book"></i> Education</span>
+        <span class="industry-tag"><i class="bi bi-wrench-adjustable"></i> Home Services</span>
+        <span class="industry-tag"><i class="bi bi-cup-straw"></i> Restaurants</span>
+        <span class="industry-tag"><i class="bi bi-briefcase"></i> B2B / SaaS</span>
+        <span class="industry-tag"><i class="bi bi-palette"></i> Beauty & Wellness</span>
+        <span class="industry-tag"><i class="bi bi-car-front"></i> Automotive</span>
+        <span class="industry-tag"><i class="bi bi-bank"></i> Finance</span>
+        <span class="industry-tag"><i class="bi bi-three-dots"></i> And More</span>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="row g-4">
+
+      <!-- Review 1 -->
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <div class="result-badge">
+            <i class="bi bi-arrow-up-short"></i> 340% increase in leads
+          </div>
+          <p class="review-text">
+            "Branliox completely transformed our online presence. We went from barely getting
+            any calls to being fully booked every week. Their local SEO strategy is phenomenal!"
+          </p>
+          <div class="reviewer">
+            <div class="avatar" style="background: linear-gradient(135deg, #4f46e5, #7c3aed);">RM</div>
+            <div class="info">
+              <div class="name">Rachel Martinez</div>
+              <div class="role"><i class="bi bi-geo-alt-fill"></i> Owner, Martinez Plumbing Co.</div>
+            </div>
+          </div>
+          <span class="service-tag">Local SEO + Google Ads</span>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <div class="result-badge">
+            <i class="bi bi-arrow-up-short"></i> 5x ROAS in 90 days
+          </div>
+          <p class="review-text">
+            "We tried three agencies before Branliox. They're the only team that actually
+            understood our brand and delivered results. Our e-commerce revenue doubled in 3 months."
+          </p>
+          <div class="reviewer">
+            <div class="avatar" style="background: linear-gradient(135deg, #059669, #10b981);">DL</div>
+            <div class="info">
+              <div class="name">Daniel Larsson</div>
+              <div class="role"><i class="bi bi-bag-fill"></i> Founder, NordicWear Apparel</div>
+            </div>
+          </div>
+          <span class="service-tag">Social Media + Paid Ads</span>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="col-md-4">
+        <div class="review-card">
+          <div class="stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <div class="result-badge">
+            <i class="bi bi-arrow-up-short"></i> Page 1 rankings in 60 days
+          </div>
+          <p class="review-text">
+            "As a small dental practice, we needed patients, not vanity metrics. Branliox got us
+            ranking #1 locally and our appointment bookings increased by 280%. Incredible team!"
+          </p>
+          <div class="reviewer">
+            <div class="avatar" style="background: linear-gradient(135deg, #0891b2, #06b6d4);">SP</div>
+            <div class="info">
+              <div class="name">Dr. Sarah Patel</div>
+              <div class="role"><i class="bi bi-geo-alt-fill"></i> BrightSmile Dental Clinic</div>
+            </div>
+          </div>
+          <span class="service-tag">SEO + Website Design</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="trust-bottom">
+      <div class="trust-bottom-left">
+        <div class="avatars-stack">
+          <div class="av" style="background: linear-gradient(135deg, #4f46e5, #7c3aed);">RM</div>
+          <div class="av" style="background: linear-gradient(135deg, #059669, #10b981);">DL</div>
+          <div class="av" style="background: linear-gradient(135deg, #0891b2, #06b6d4);">SP</div>
+          <div class="av" style="background: linear-gradient(135deg, #ea580c, #f97316);">JW</div>
+          <div class="av" style="background: linear-gradient(135deg, #dc2626, #ef4444);">AK</div>
+          <div class="av av-more">5K+</div>
+        </div>
+        <h4>Ready to grow your business with Branliox?</h4>
+        <p>
+          Rated <span class="rating-val">4.9 ★</span> from 2,800+ reviews &bull; Results in as fast as 30 days
+        </p>
+      </div>
+      <div class="trust-bottom-right">
+        <a href="#" class="btn-branliox primary">
+          Get Free Strategy Call <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="#" class="btn-branliox outline">
+          <i class="bi bi-play-circle"></i> See Case Studies
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- ===== END TRUST SECTION ===== -->
+ 
     <!-- Hero Section -->
     <section id="home" class="hero-section pt-5 pb-5 overflow-hidden">
         <div class="container-fluid">
