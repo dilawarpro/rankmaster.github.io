@@ -706,10 +706,38 @@
     <!-- Navbar -->
     <nav class="navbar mt-2 navbar-expand-lg navbar-dark navbar-gradient" style="position: fixed; top: 0; width: 100%; z-index: 1050; border-radius: 30px;">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="#home">
-                <!-- <i class="fas fa-rocket"></i> -->
-                 Brandliox Global 🌍
-            </a>
+           <!-- ...existing code... -->
+<!-- Replace the existing brand anchor with this dropdown -->
+<div class="navbar-brand fw-bold dropdown">
+  <a id="brandDropdownBtn"
+     class="dropdown-toggle d-inline-flex align-items-center text-white"
+     href="#"
+     role="button"
+     data-bs-toggle="dropdown"
+     aria-expanded="false">
+    <i class="bi bi-globe2 me-2"></i>
+    Brandliox Global
+    <i class="bi bi-chevron-down ms-2"></i>
+  </a>
+
+  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="brandDropdownBtn">
+    <li><a class="dropdown-item" href="digital-marketing-dubai.html">🇦🇪 United Arab Emirates (Dubai)</a></li>
+    <li><a class="dropdown-item" href="digital-marketing-usa.html">🇺🇸 United States</a></li>
+    <li><a class="dropdown-item" href="digital-marketing-uk.html">🇬🇧 United Kingdom</a></li>
+    <li><a class="dropdown-item" href="digital-marketing-canada.html">🇨🇦 Canada</a></li>
+    <li><a class="dropdown-item" href="digital-marketing-pakistan.html">🇵🇰 Pakistan</a></li>
+    <li><a class="dropdown-item" href="digital-marketing-india.html">🇮🇳 India</a></li>
+  </ul>
+</div>
+
+<!-- Add minimal styles (you can merge into your existing CSS) -->
+<style>
+/* ensure brand dropdown text stays white in navbar */
+.navbar .dropdown-toggle { color: #fff !important; text-decoration: none; }
+.navbar .dropdown-menu-dark .dropdown-item { color: #fff; }
+.navbar .dropdown-menu-dark .dropdown-item:hover { background: rgba(255,255,255,0.06); }
+</style>
+<!-- ...existing code... -->
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
