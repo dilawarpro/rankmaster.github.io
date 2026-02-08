@@ -706,16 +706,174 @@
     <!-- Navbar -->
     <nav class="navbar mt-2 navbar-expand-lg navbar-dark navbar-gradient" style="position: fixed; top: 0; width: 100%; z-index: 1050; border-radius: 30px;">
         <div class="container-fluid">
-            <div class="country-dropdown-wrapper">
-  <select class="country-dropdown" id="countrySelector">
-    <option value="#" selected>🌍 Brandliox Global</option>
-    <option value="digital-marketing-dubai.html">🇦🇪 United Arab Emirates (Dubai)</option>
-    <option value="digital-marketing-usa.html">🇺🇸 United States</option>
-    <option value="digital-marketing-uk.html">🇬🇧 United Kingdom</option>
-    <option value="digital-marketing-canada.html">🇨🇦 Canada</option>
-    <option value="digital-marketing-pakistan.html">🇵🇰 Pakistan</option>
-    <option value="digital-marketing-india.html">🇮🇳 India</option>
-  </select>
+          <!-- Replace the navbar brand section with this updated version -->
+<nav class="navbar mt-2 navbar-expand-lg navbar-dark navbar-gradient" style="position: fixed; top: 0; width: 100%; z-index: 1050; border-radius: 30px;">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#home">
+            <!-- <i class="fas fa-rocket"></i> -->
+             Brandliox Global 🌍
+        </a>
+        
+        <!-- Country Dropdown in Navbar -->
+        <div class="navbar-country-dropdown d-lg-none me-2">
+            <select class="navbar-select" id="navCountrySelector">
+                <option value="#" selected>🌍 Global</option>
+                <option value="digital-marketing-dubai.html">🇦🇪 Dubai</option>
+                <option value="digital-marketing-usa.html">🇺🇸 USA</option>
+                <option value="digital-marketing-uk.html">🇬🇧 UK</option>
+                <option value="digital-marketing-canada.html">🇨🇦 Canada</option>
+                <option value="digital-marketing-pakistan.html">🇵🇰 Pakistan</option>
+                <option value="digital-marketing-india.html">🇮🇳 India</option>
+            </select>
+        </div>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active hover-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hover-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hover-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hover-link" href="#pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hover-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hover-link" href="#contact">Contact</a>
+                </li>
+                <!-- Country Dropdown Desktop Version -->
+                <li class="nav-item d-none d-lg-block">
+                    <div class="navbar-country-dropdown-desktop">
+                        <select class="navbar-select-desktop" id="desktopCountrySelector">
+                            <option value="#" selected>🌍 Global</option>
+                            <option value="digital-marketing-dubai.html">🇦🇪 Dubai</option>
+                            <option value="digital-marketing-usa.html">🇺🇸 USA</option>
+                            <option value="digital-marketing-uk.html">🇬🇧 UK</option>
+                            <option value="digital-marketing-canada.html">🇨🇦 Canada</option>
+                            <option value="digital-marketing-pakistan.html">🇵🇰 Pakistan</option>
+                            <option value="digital-marketing-india.html">🇮🇳 India</option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+            <button class="btn btn-call ms-3" id="navCallBtn">
+                <i class="fas fa-phone-alt"></i> Call Us
+            </button>
+        </div>
+    </div>
+</nav>
+
+<style>
+/* ===== NAVBAR COUNTRY DROPDOWN ===== */
+.navbar-country-dropdown,
+.navbar-country-dropdown-desktop {
+    display: inline-block;
+}
+
+.navbar-select,
+.navbar-select-desktop {
+    padding: 8px 14px;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px;
+    padding-right: 28px;
+}
+
+.navbar-select:hover,
+.navbar-select-desktop:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-select:focus,
+.navbar-select-desktop:focus {
+    outline: none;
+    border-color: white;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.navbar-select option,
+.navbar-select-desktop option {
+    background: #1e293b;
+    color: white;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.navbar-select option:checked,
+.navbar-select-desktop option:checked {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+    .navbar-country-dropdown {
+        margin-right: 12px;
+    }
+
+    .navbar-select {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+        padding-right: 26px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-select {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+        padding-right: 24px;
+    }
+}
+</style>
+
+<script>
+// Handle country selection
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileSelect = document.getElementById('navCountrySelector');
+    const desktopSelect = document.getElementById('desktopCountrySelector');
+
+    // Mobile dropdown
+    if (mobileSelect) {
+        mobileSelect.addEventListener('change', function() {
+            const value = this.value;
+            if (value !== '#') {
+                window.location.href = value;
+            }
+        });
+    }
+
+    // Desktop dropdown
+    if (desktopSelect) {
+        desktopSelect.addEventListener('change', function() {
+            const value = this.value;
+            if (value !== '#') {
+                window.location.href = value;
+            }
+        });
+    }
+});
+</script>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -1131,92 +1289,15 @@
                     </h1>
                     
                     <p class="hero-subtitle fade-in-up text-muted" style="animation-delay: 0.2s;">
-                        Brandliox is full-service digital marketing company that helps you get <strong>more customers from Google Search Top Rankings, Facebook and Instagram ads, TikTok ads, and Google Ads</strong>. Brandliox is loved and trusted by 500+ businesses across multiple countries worldwide, including:
-                    </p>
-                    <!-- Replace the <ul> list with this dropdown -->
-<div class="country-dropdown-wrapper">
-  <select class="country-dropdown" id="countrySelector">
-    <option value="#" selected>🌍 Brandliox Global</option>
-    <option value="digital-marketing-dubai.html">🇦🇪 United Arab Emirates (Dubai)</option>
-    <option value="digital-marketing-usa.html">🇺🇸 United States</option>
-    <option value="digital-marketing-uk.html">🇬🇧 United Kingdom</option>
-    <option value="digital-marketing-canada.html">🇨🇦 Canada</option>
-    <option value="digital-marketing-pakistan.html">🇵🇰 Pakistan</option>
-    <option value="digital-marketing-india.html">🇮🇳 India</option>
-  </select>
-</div>
-
-<style>
-.country-dropdown-wrapper {
-  margin: 16px 0;
-  display: inline-block;
-  width: 100%;
-  max-width: 400px;
-}
-
-.country-dropdown {
-  width: 100%;
-  padding: 12px 16px;
-  border: 2px solid rgba(79, 70, 229, 0.2);
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);
-  color: var(--dark-secondary);
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234f46e5' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 40px;
-}
-
-.country-dropdown:hover {
-  border-color: var(--primary);
-  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.15);
-  background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%);
-}
-
-.country-dropdown:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-}
-
-.country-dropdown option {
-  padding: 10px 16px;
-  background: var(--white);
-  color: var(--dark-secondary);
-  font-weight: 500;
-}
-
-.country-dropdown option:hover {
-  background: var(--primary-light);
-  color: var(--primary);
-}
-
-@media (max-width: 767px) {
-  .country-dropdown-wrapper {
-    max-width: 100%;
-  }
-
-  .country-dropdown {
-    padding: 10px 14px;
-    font-size: 0.9rem;
-    padding-right: 38px;
-  }
-}
-</style>
-
-<script>
-document.getElementById('countrySelector').addEventListener('change', function() {
-  const value = this.value;
-  if (value !== '#') {
-    window.location.href = value;
-  }
-});
-</script>
+                        Brandliox is full-service digital marketing company that helps you get <strong>more customers from Google Search Top Rankings, Facebook and Instagram ads, TikTok ads, and Google Ads</strong>. Brandliox is loved and trusted by 500+ businesses across multiple countries worldwide, including:</p>
+                        <ul style="list-style: none !important; padding-left: 0; font-weight: bold;">
+                          <li><a href="digital-marketing-dubai.html">🇦🇪 United Arab Emirates (Dubai)</a></li>
+                          <li><a href="digital-marketing-usa.html">🇺🇸 United States</a></li>
+                          <li><a href="digital-marketing-uk.html">🇬🇧 United Kingdom</a></li>
+                          <li><a href="digital-marketing-canada.html">🇨🇦 Canada</a></li>
+                            <li><a href="digital-marketing-pakistan.html">🇵🇰 Pakistan</a></li>
+                            <li><a href="digital-marketing-india.html">🇮🇳 India</a></li>
+                        </ul>
                     <h2 class="hero-title fade-in-up" style="animation-delay: 0.1s;">
                         Want a <span class="gradient-text">24/7 Sales Machine</span> for your Business?
                     </h2>
@@ -1643,7 +1724,84 @@ document.getElementById('countrySelector').addEventListener('change', function()
             </div>
             
             <div class="row mt-5">
-                <div class="col-12
+                <div class="col-12 text-center">
+                    <p class="lead text-muted">Don't see your industry? <strong>We work with ALL types of businesses!</strong></p>
+                    <a href="https://wa.me/923369295295?text=I%20need%20digital%20marketing%20for%20my%20business." class="btn btn-primary-gradient btn-lg">
+                        <i class="fab fa-whatsapp"></i> Discuss Your Business
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="services-section py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                      <div class="hero-badge mb-3 fade-in-up"> 
+                    <span class="badge bg-gradient-primary mb-3">Our Services</span>
+                    <h2 class="section-title gradient-text">Comprehensive Digital Solutions</h2>
+                    <p class="text-muted">From website development to complete digital marketing strategies, we have everything your business needs to succeed online.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="service-card large-card">
+                        <div class="service-icon gradient-bg-1">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Website Development</h4>
+                            <p>Custom-built, modern websites designed to convert visitors into customers. Built with the latest technologies for speed and performance.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Responsive Design</li>
+                                <li><i class="fas fa-check"></i> Fast Loading Speed</li>
+                                <li><i class="fas fa-check"></i> SEO-Friendly Architecture</li>
+                                <li><i class="fas fa-check"></i> Mobile Optimized</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="service-card large-card">
+                        <div class="service-icon gradient-bg-2">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Search Engine Optimization (SEO)</h4>
+                            <p>Proven SEO strategies to get your website ranked #1 on Google. We optimize on-page, technical, and off-page SEO factors.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Keyword Research & Strategy</li>
+                                <li><i class="fas fa-check"></i> On-Page Optimization</li>
+                                <li><i class="fas fa-check"></i> Link Building</li>
+                                <li><i class="fas fa-check"></i> Technical SEO</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="service-card large-card">
+                        <div class="service-icon gradient-bg-3">
+                            <i class="fas fa-share-nodes"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Social Media Marketing</h4>
+                            <p>Powerful social media campaigns that engage your audience and drive conversions across all major platforms.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Content Creation</li>
+                                <li><i class="fas fa-check"></i> Paid Ads Management</li>
+                                <li><i class="fas fa-check"></i> Community Management</li>
+                                <li><i class="fas fa-check"></i> Analytics & Reporting</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
